@@ -5,8 +5,12 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "tslint --project tsconfig.json --fix",
-    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.ts": [
