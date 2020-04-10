@@ -5,12 +5,15 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "tslint --project tsconfig.json --fix",
+    "pre-commit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint",
+      "prettier --write",
+      "git add"
+    ]
   },
   "author": "j532547613@gmail.com",
   "license": "MIT",
