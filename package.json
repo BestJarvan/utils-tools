@@ -14,18 +14,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {
-    "*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "vueIndentScriptAndStyle": true,
-    "arrowParens": "avoid"
-  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "gulp": "^4.0.2",
