@@ -1,7 +1,7 @@
-function hello (compiler: string) {
+function hello(compiler: string) {
   console.log(`Hello from ${compiler}`)
   let s = 122
-  const ss = 233
+  const ss = 2222233
   let sddd = 2122221333
   console.log(s + 1)
 }

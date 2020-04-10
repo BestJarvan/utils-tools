@@ -7,6 +7,8 @@
     "lint": "tslint --project tsconfig.json --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "j532547613@gmail.com",
+  "license": "MIT",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -14,11 +16,14 @@
   },
   "lint-staged": {
     "*.ts": [
-      "npm run lint"
+      "prettier --write",
+      "git add"
     ]
   },
-  "author": "j532547613@gmail.com",
-  "license": "MIT",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "gulp": "^4.0.2",
