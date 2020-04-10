@@ -8,6 +8,13 @@
     "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+    "{src}/**/*.ts": [
+      "npm run lint",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "author": "j532547613@gmail.com",
   "license": "MIT",
   "devDependencies": {
