@@ -1,6 +1,6 @@
 {
   "extends": [
-    "tslint-config-prettier",
-    "tslint-config-standard"
+    "tslint-config-standard",
+    "tslint-config-prettier"
   ]
 }
