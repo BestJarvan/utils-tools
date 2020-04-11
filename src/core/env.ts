@@ -58,7 +58,7 @@ export function getIEVersion(): number | string {
     const reIE = new RegExp('MSIE (\\d+\\.\\d+);')
     reIE.test(userAgent)
     const fIEVersion = parseFloat(RegExp['$1'])
-    if (fIEVersion == 7) {
+    if (fIEVersion === 7) {
       return 7
     } else if (fIEVersion === 8) {
       return 8
