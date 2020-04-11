@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "工具包",
   "main": "dist/index.js",
+  "typings": "dist/types/index.d.ts",
   "scripts": {
     "lint": "tslint --project tsconfig.json --fix",
+    "build": "gulp && typedoc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "j532547613@gmail.com",
@@ -24,6 +26,7 @@
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
+    "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },
   "dependencies": {}

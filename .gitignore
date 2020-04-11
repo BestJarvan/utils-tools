@@ -71,6 +71,9 @@ typings/
 # Nuxt generate
 dist
 
+# Typedoc generate
+docs
+
 # vuepress build output
 .vuepress/dist
 
