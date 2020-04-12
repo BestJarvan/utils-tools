@@ -10,7 +10,7 @@
     "declarationDir": "dist/types",
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": [
     "**/*.spec.ts"

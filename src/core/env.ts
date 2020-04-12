@@ -3,9 +3,6 @@ const userAgent = navigator.userAgent
  *
  * @return {string} 返回当前浏览器所在系统 ios | android | win
  *
- * ```typescript
- * jUtils.getOs()
- * ```
  */
 export function getOs(): string {
   let env: string
@@ -21,7 +18,7 @@ export function getOs(): string {
 
 /**
  *
- * @return {boolean} 判断当前浏览器是移动端还是pc端
+ * @return {boolean} 判断当前浏览器是移动端(false)还是pc端(true)
  *
  */
 export function getEnv(): boolean {
