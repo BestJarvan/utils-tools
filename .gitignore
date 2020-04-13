@@ -68,11 +68,8 @@ typings/
 # nuxt.js build output
 .nuxt
 
-# Nuxt generate
+# generate
 dist
-
-# Typedoc generate
-docs
 
 .rpt2_cache
 
