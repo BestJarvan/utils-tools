@@ -1,19 +1,19 @@
 const userAgent = navigator.userAgent
 /**
  *
- * @return {string} 返回当前浏览器所在系统 ios | android | win
+ * @return {string} 返回当前浏览器所在系统
+ * ios | android | winPhone
  *
  */
 export function getOs(): string {
-  let env: string
   if (userAgent.indexOf('Android') > -1 || userAgent.indexOf('Adr') > -1) {
-    env = 'android'
+    return 'android'
   } else if (userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
-    env = 'ios'
+    return 'ios'
   } else if (userAgent.indexOf('window phone') > -1) {
-    env = 'win'
+    return 'winPhone'
   }
-  return env
+  return 'unknown'
 }
 
 /**
