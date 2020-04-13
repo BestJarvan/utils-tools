@@ -74,6 +74,8 @@ dist
 # Typedoc generate
 docs
 
+.rpt2_cache
+
 # vuepress build output
 .vuepress/dist
 

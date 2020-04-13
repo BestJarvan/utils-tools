@@ -1,6 +1,6 @@
 import * as env from './core/env'
 
-import { mixin } from './utils'
+import { mixin } from './tools/index'
 
 function initUtils() {
   const instance = Object.create(null)
