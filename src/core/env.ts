@@ -1,6 +1,11 @@
+/**
+ * @ignore 获取用户代理
+ */
 const userAgent = navigator.userAgent
+
 /**
  *
+ * @ignore
  * @return {string} 返回当前浏览器所在系统
  * ios | android | winPhone
  *
@@ -18,6 +23,7 @@ export function getOs(): string {
 
 /**
  *
+ * @ignore
  * @return {boolean} 判断当前浏览器是移动端(false)还是pc端(true)
  *
  */
@@ -35,6 +41,7 @@ export function getEnv(): boolean {
 
 /**
  *
+ * @ignore
  * @return {number | string} 判断IE版本
  * -1: 非IE
  * 6 - 11: IE6-IE11版本
