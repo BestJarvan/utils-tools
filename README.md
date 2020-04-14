@@ -38,7 +38,7 @@
 
 ```
 // 通过npm安装
-npm i --save-dev @jarvannnn/utils
+npm i --save @jarvannnn/utils
 ```
 
 #### 参与贡献
