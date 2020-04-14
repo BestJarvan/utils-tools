@@ -67,32 +67,45 @@
 				<a href="#utils" id="utils" style="color: inherit; text-decoration: none;">
 					<h1>utils</h1>
 				</a>
-				<a href="#介绍" id="介绍" style="color: inherit; text-decoration: none;">
-					<h4>介绍</h4>
+				<p>使用typescript搭建、rollup+gulp编译打包的一个小型工具包，欢迎fork、start
+				<a href="https://bestjarvan.gitee.io/utils/">文档</a></p>
+				<a href="#文件目录" id="文件目录" style="color: inherit; text-decoration: none;">
+					<h4>文件目录</h4>
 				</a>
-				<p>{<strong>以下是码云平台说明，您可以替换此简介</strong>
-					码云是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-				无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 <a href="https://gitee.com/enterprises">https://gitee.com/enterprises</a>}</p>
+				<pre><code>.
+├── LICENSE
+├── README<span class="hljs-selector-class">.md</span>
+├── docs <span class="hljs-comment">// typedoc生成的文档</span>
+│   ├── assets
+│   ├── globals<span class="hljs-selector-class">.html</span>
+│   ├── index<span class="hljs-selector-class">.html</span>
+│   └── interfaces
+├── gulpfile<span class="hljs-selector-class">.js</span> <span class="hljs-comment">// gulp+rollup配置文件</span>
+├── package<span class="hljs-selector-class">.json</span>
+├── src <span class="hljs-comment">// 代码模块</span>
+│   ├── core <span class="hljs-comment">// 核心代码块</span>
+│   │   ├── env<span class="hljs-selector-class">.ts</span>
+│   │   └── ***<span class="hljs-selector-class">.ts</span>
+│   ├── index<span class="hljs-selector-class">.ts</span> <span class="hljs-comment">// 入口文件</span>
+│   ├── tools
+│   │   └── index<span class="hljs-selector-class">.ts</span>
+│   └── types <span class="hljs-comment">// 声明文件</span>
+│       └── index<span class="hljs-selector-class">.ts</span>
+├── tsconfig<span class="hljs-selector-class">.json</span> <span class="hljs-comment">// ts配置</span>
+├── tslint<span class="hljs-selector-class">.json</span> <span class="hljs-comment">// tslint配置</span>
+├── <span class="hljs-selector-class">.prettierrc</span> <span class="hljs-comment">// prettier配置</span>
+├── <span class="hljs-selector-class">.lintstagedrc</span> <span class="hljs-comment">// lintstage配置</span>
+└── typedoc<span class="hljs-selector-class">.json</span> <span class="hljs-comment">// typedoc配置</span>
+</code></pre>
 				<a href="#软件架构" id="软件架构" style="color: inherit; text-decoration: none;">
 					<h4>软件架构</h4>
 				</a>
 				<p>软件架构说明</p>
-				<a href="#安装教程" id="安装教程" style="color: inherit; text-decoration: none;">
-					<h4>安装教程</h4>
-				</a>
-				<ol>
-					<li>xxxx</li>
-					<li>xxxx</li>
-					<li>xxxx</li>
-				</ol>
 				<a href="#使用说明" id="使用说明" style="color: inherit; text-decoration: none;">
 					<h4>使用说明</h4>
 				</a>
-				<ol>
-					<li>xxxx</li>
-					<li>xxxx</li>
-					<li>xxxx</li>
-				</ol>
+				<pre><code><span class="hljs-regexp">//</span> 通过<span class="hljs-built_in">npm</span>安装
+<span class="hljs-built_in">npm</span> i --save-dev @jarvannnn/utils</code></pre>
 				<a href="#参与贡献" id="参与贡献" style="color: inherit; text-decoration: none;">
 					<h4>参与贡献</h4>
 				</a>
@@ -101,17 +114,6 @@
 					<li>新建 Feat_xxx 分支</li>
 					<li>提交代码</li>
 					<li>新建 Pull Request</li>
-				</ol>
-				<a href="#码云特技" id="码云特技" style="color: inherit; text-decoration: none;">
-					<h4>码云特技</h4>
-				</a>
-				<ol>
-					<li>使用 Readme_XXX.md 来支持不同的语言，例如 Readme_en.md, Readme_zh.md</li>
-					<li>码云官方博客 <a href="https://blog.gitee.com">blog.gitee.com</a></li>
-					<li>你可以 <a href="https://gitee.com/explore">https://gitee.com/explore</a> 这个地址来了解码云上的优秀开源项目</li>
-					<li><a href="https://gitee.com/gvp">GVP</a> 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目</li>
-					<li>码云官方提供的使用手册 <a href="https://gitee.com/help">https://gitee.com/help</a></li>
-					<li>码云封面人物是一档用来展示码云会员风采的栏目 <a href="https://gitee.com/gitee-stars/">https://gitee.com/gitee-stars/</a></li>
 				</ol>
 			</div>
 		</div>
