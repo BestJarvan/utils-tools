@@ -1,9 +1,4 @@
 /**
- * @ignore 获取用户代理
- */
-const userAgent = navigator.userAgent
-
-/**
  *
  * @ignore
  * @return {string} 返回当前浏览器所在系统
@@ -11,14 +6,16 @@ const userAgent = navigator.userAgent
  *
  */
 export function getOs(): string {
+  const userAgent = navigator.userAgent
   if (userAgent.indexOf('Android') > -1 || userAgent.indexOf('Adr') > -1) {
     return 'android'
   } else if (userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
     return 'ios'
-  } else if (userAgent.indexOf('window phone') > -1) {
+  } else if (userAgent.indexOf('Windows Phone') > -1) {
     return 'winPhone'
+  } else {
+    return 'unknown'
   }
-  return 'unknown'
 }
 
 /**
@@ -28,6 +25,7 @@ export function getOs(): string {
  *
  */
 export function getEnv(): boolean {
+  const userAgent = navigator.userAgent
   const device: string[] = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod']
   let flag: boolean = true
   for (let i = 0; i < device.length; i++) {
@@ -49,6 +47,7 @@ export function getEnv(): boolean {
  *
  */
 export function getIEVersion(): number | string {
+  const userAgent = navigator.userAgent
   const isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1 // 判断是否IE<11浏览器
   const isEdge = userAgent.indexOf('Edge') > -1 && !isIE // 判断是否IE的Edge浏览器
   const isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1 // IE11
