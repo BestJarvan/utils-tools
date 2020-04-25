@@ -5,7 +5,7 @@ Object.defineProperty(navigator, 'userAgent', {
   value: '',
 })
 
-describe('Utils test', () => {
+describe('Env test', () => {
   test('getEnv must return a boolean', () => {
     const resolve = utils.getEnv()
     expect(typeof resolve).toBe('boolean')

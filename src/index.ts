@@ -1,4 +1,5 @@
 import * as env from './core/env'
+import * as verify from './core/verify'
 import { mixin } from './tools/index'
 import { Types } from './types'
 
@@ -9,7 +10,7 @@ export * from './types/index'
  */
 function initUtils(): Types {
   const instance = Object.create(null)
-  const arr = [env]
+  const arr = [env, verify]
 
   mixin(instance, arr)
 
