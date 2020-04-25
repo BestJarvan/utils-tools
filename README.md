@@ -31,8 +31,33 @@
 
 ```
 
-#### 软件架构
-软件架构说明
+#### 测试通过率
+
+ PASS  test/index.spec.ts
+ PASS  test/core/verify.spec.ts
+ PASS  test/core/is.spec.ts
+ PASS  test/core/env.spec.ts
+ PASS  test/core/format.spec.ts
+------------|---------|----------|---------|---------|-------------------
+File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------|---------|----------|---------|---------|-------------------
+All files   |     100 |      100 |     100 |     100 |                   
+ src        |     100 |      100 |     100 |     100 |                   
+  index.ts  |     100 |      100 |     100 |     100 |                   
+ src/core   |     100 |      100 |     100 |     100 |                   
+  env.ts    |     100 |      100 |     100 |     100 |                   
+  format.ts |     100 |      100 |     100 |     100 |                   
+  is.ts     |     100 |      100 |     100 |     100 |                   
+  verify.ts |     100 |      100 |     100 |     100 |                   
+ src/tools  |     100 |      100 |     100 |     100 |                   
+  index.ts  |     100 |      100 |     100 |     100 |                   
+------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 5 passed, 5 total
+Tests:       24 passed, 24 total
+Snapshots:   0 total
+Time:        3.425s, estimated 5s
+Ran all test suites.
 
 #### 使用说明
 
