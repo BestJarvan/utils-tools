@@ -22,7 +22,7 @@ describe('Format test', () => {
     expect(resolve >= 9).toBe(false)
 
     const resolve2: number = utils.random(6, 2)
-    expect(resolve2 >= 2 && resolve < 6).toBe(true)
+    expect(resolve2 >= 2 && resolve2 < 6).toBe(true)
     expect(resolve2 >= 6).toBe(false)
   })
 

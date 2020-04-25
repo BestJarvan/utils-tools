@@ -5,6 +5,7 @@ module.exports = {
     "node-modules",
     "test"
   ],
+  // 全局通过率
   coverageThreshold: {
     global: {
       branches: 90,

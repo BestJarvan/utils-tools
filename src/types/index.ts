@@ -288,9 +288,56 @@ interface Is {
   isNull(value: any): boolean
 }
 
+interface Date {
+  /**
+   *
+   * 格式化时间 支持自定义格式 参考element-ui的时间格式
+   * @param value 传入时间戳 10位 | 13位
+   * @param format 可选参数 传入目标时间格式 默认'yyyy-MM-dd HH:mm:ss'
+   * @return {string} '2020-04-25 22:00:00'
+   * @author Jarvan
+   * ``` typescript
+   * utils.formatTime(1587823200000, 'yyyy-MM-dd HH:mm:ss')    // '2020-04-25 22:00:00'
+   * utils.formatTime(1587823200000, 'yyyy-MM-dd')    // '2020-04-25'
+   * utils.formatTime(1587823200000, 'yyyy-M-d')    // '2020-4-25'
+   * ```
+   *
+   */
+  formatTime(value: number, format?: string): string
+
+  /**
+   *
+   * 格式化时间 支持自定义格式 参考element-ui的时间格式
+   * @param value 传入时间戳 10位 | 13位
+   * @param hour 可选参数 是否需要小时、分钟、秒钟
+   * @return {string} '2020-04-25 22:00:00'
+   * @author Jarvan
+   * ``` typescript
+   * utils.formatHourTime(1587823200000, true)    // '2020-04-25 22:00:00'
+   * utils.formatHourTime(1587823200000)    // '2020-04-25'
+   * ```
+   *
+   */
+  formatHourTime(value: number, hour?: boolean): string
+
+  /**
+   *
+   * 格式化时间 支持自定义格式 参考element-ui的时间格式
+   * @param long 是否需要 10位或者13位时间戳 默认为 10位时间戳
+   * @return {string} '2020-04-25 22:00:00'
+   * @author Jarvan
+   * ``` typescript
+   * utils.now()      // 1587823200
+   * utils.now(true)  // 1587823200000
+   * ```
+   *
+   */
+  now(long?: boolean): string
+}
+
 /**
  *
  * @ignore
  *
  */
-export interface Types extends Env, Verify, Format, Is {}
+export interface Types extends Env, Verify, Format, Is, Date {}

@@ -79,6 +79,7 @@ describe('Utils test', () => {
     })
   })
 
+  // verify模块
   describe('Verify test', () => {
     test('Utils must have a verifyHttp function', () => {
       expect(typeof utils.verifyHttp).toBe('function')
@@ -94,6 +95,21 @@ describe('Utils test', () => {
 
     test('Utils must have a verifyEmail function', () => {
       expect(typeof utils.verifyEmail).toBe('function')
+    })
+  })
+
+  // date模块
+  describe('Date test', () => {
+    test('Utils must have a formatTime function', () => {
+      expect(typeof utils.formatTime).toBe('function')
+    })
+
+    test('Utils must have a formatHourTime function', () => {
+      expect(typeof utils.formatHourTime).toBe('function')
+    })
+
+    test('Utils must have a now function', () => {
+      expect(typeof utils.now).toBe('function')
     })
   })
 })
