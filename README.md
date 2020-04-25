@@ -32,7 +32,7 @@
 ```
 
 #### 测试通过率
-
+```
  PASS  test/index.spec.ts
  PASS  test/core/verify.spec.ts
  PASS  test/core/is.spec.ts
@@ -58,7 +58,7 @@ Tests:       24 passed, 24 total
 Snapshots:   0 total
 Time:        3.425s, estimated 5s
 Ran all test suites.
-
+```
 #### 使用说明
 
 ```
