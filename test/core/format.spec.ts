@@ -12,8 +12,8 @@ describe('Format test', () => {
   })
 
   test('creatMobile must return a string', () => {
-    expect(utils.verifyMobile(utils.creatMobile())).toBe(true)
-    expect(utils.creatMobile(true).indexOf('****') !== -1).toBe(true)
+    expect(utils.creatMobile()).toMatch(/^1[3456789]\d{9}$/)
+    expect(utils.creatMobile(true)).toMatch(/(\d{3})\*{4}(\d{4})/)
   })
 
   test('random must return a number', () => {
