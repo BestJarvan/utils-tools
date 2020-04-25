@@ -13,7 +13,7 @@
   "typings": "dist/types/index.d.ts",
   "scripts": {
     "lint": "tslint --project tsconfig.json --fix",
-    "build": "gulp && typedoc",
+    "build": "npm run lint && gulp && typedoc",
     "test": "jest --coverage"
   },
   "author": "j532547613@gmail.com",

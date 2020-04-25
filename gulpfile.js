@@ -11,6 +11,7 @@ const pkg = require('./package.json')
 
 function task_clean (done) {
   del.sync('dist')
+  del.sync('docs')
   done()
 }
 

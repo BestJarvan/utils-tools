@@ -97,10 +97,34 @@
 ├── <span class="hljs-selector-class">.lintstagedrc</span> <span class="hljs-comment">// lintstage配置</span>
 └── typedoc<span class="hljs-selector-class">.json</span> <span class="hljs-comment">// typedoc配置</span>
 </code></pre>
-				<a href="#软件架构" id="软件架构" style="color: inherit; text-decoration: none;">
-					<h4>软件架构</h4>
+				<a href="#测试通过率" id="测试通过率" style="color: inherit; text-decoration: none;">
+					<h4>测试通过率</h4>
 				</a>
-				<p>软件架构说明</p>
+				<pre><code> PASS  test/index.spec.ts
+ PASS  test/core/verify.spec.ts
+ PASS  test/core/is.spec.ts
+ PASS  test/core/env.spec.ts
+ PASS  test/core/format.spec.ts
+------------|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
+File        </span>|<span class="hljs-string"> % Stmts </span>|<span class="hljs-string"> % Branch </span>|<span class="hljs-string"> % Funcs </span>|<span class="hljs-string"> % Lines </span>|<span class="hljs-string"> Uncovered Line #s 
+------------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
+All files   </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+ src        </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+  index.ts  </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+ src/core   </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+  env.ts    </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+  format.ts </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+  is.ts     </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+  verify.ts </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+ src/tools  </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+  index.ts  </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+------------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
+
+Test Suites: 5 passed, 5 total
+Tests:       24 passed, 24 total
+Snapshots:   0 total
+Time:        3.425s, estimated 5s
+Ran all test suites.</span></code></pre>
 				<a href="#使用说明" id="使用说明" style="color: inherit; text-decoration: none;">
 					<h4>使用说明</h4>
 				</a>
@@ -129,6 +153,15 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/env.html" class="tsd-kind-icon">Env</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/format.html" class="tsd-kind-icon">Format</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/is.html" class="tsd-kind-icon">Is</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/verify.html" class="tsd-kind-icon">Verify</a>
 					</li>
 				</ul>
 			</nav>
