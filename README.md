@@ -1,5 +1,10 @@
 # utils
 使用typescript搭建、rollup+gulp编译打包的一个小型工具包，欢迎fork、start
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://gitee.com/bestjarvan/utils/pulls)
+[![stars](https://img.shields.io/badge/dynamic/json?color=informational&label=starts&query=stared&url=https%3A%2F%2Fgitee.com%2Fapi%2Fv5%2Fusers%2Fbestjarvan%3Faccess_token%3Ddc0634e3142b0620e7697bc9f5b328fd)](https://gitee.com/bestjarvan/utils)
+[![npm](https://img.shields.io/bundlephobia/min/@jarvannnn/utils/0.0.11)](https://www.npmjs.com/package/@jarvannnn/utils)
+
 [文档](https://bestjarvan.gitee.io/utils/)
 
 #### 文件目录
