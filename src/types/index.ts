@@ -153,7 +153,7 @@ interface Format {
    * ```
    *
    */
-  random(max: number, min?: number): string
+  random(max: number, min?: number): number
 
   /**
    *
@@ -175,7 +175,7 @@ interface Format {
    * @return {object}
    * @author Jarvan
    * ``` typescript
-   * utils.parseParams('https://www.baidu.com/a.html?id=1&page=1&pageSize=20') // { id: 1, page: 1, pageSize: 20 }
+   * utils.parseParams('id=1&page=1&pageSize=20') // { id: 1, page: 1, pageSize: 20 }
    * ```
    *
    */
@@ -211,7 +211,7 @@ interface Is {
 
   /**
    *
-   * 判断是否是对象 ([], null, object) 都为true
+   * 判断是否是对象 ([], object) 都为true
    * @param value 传入需要判断的变量
    * @return {boolean} true | false
    * @author Jarvan
