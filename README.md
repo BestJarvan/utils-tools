@@ -39,11 +39,12 @@
 
 #### 测试通过率
 ```
- PASS  test/index.spec.ts
- PASS  test/core/verify.spec.ts
- PASS  test/core/is.spec.ts
- PASS  test/core/env.spec.ts
- PASS  test/core/format.spec.ts
+ PASS  test/core/verify.spec.ts (6.704s)
+ PASS  test/core/env.spec.ts (6.706s)
+ PASS  test/core/is.spec.ts (6.71s)
+ PASS  test/core/format.spec.ts (6.715s)
+ PASS  test/core/date.spec.ts (6.742s)
+ PASS  test/index.spec.ts (6.75s)
 ------------|---------|----------|---------|---------|-------------------
 File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------|---------|----------|---------|---------|-------------------
@@ -51,6 +52,7 @@ All files   |     100 |      100 |     100 |     100 |
  src        |     100 |      100 |     100 |     100 |                   
   index.ts  |     100 |      100 |     100 |     100 |                   
  src/core   |     100 |      100 |     100 |     100 |                   
+  date.ts   |     100 |      100 |     100 |     100 |                   
   env.ts    |     100 |      100 |     100 |     100 |                   
   format.ts |     100 |      100 |     100 |     100 |                   
   is.ts     |     100 |      100 |     100 |     100 |                   
@@ -59,10 +61,10 @@ All files   |     100 |      100 |     100 |     100 |
   index.ts  |     100 |      100 |     100 |     100 |                   
 ------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 5 passed, 5 total
-Tests:       24 passed, 24 total
+Test Suites: 6 passed, 6 total
+Tests:       51 passed, 51 total
 Snapshots:   0 total
-Time:        3.425s, estimated 5s
+Time:        8.492s
 Ran all test suites.
 ```
 #### 使用说明
