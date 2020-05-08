@@ -1,9 +1,9 @@
 # utils
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://gitee.com/bestjarvan/utils/pulls)
+[![npm](https://img.shields.io/bundlephobia/min/@jarvannnn/utils/0.0.11)](https://www.npmjs.com/package/@jarvannnn/utils)
 [![star](https://gitee.com/bestjarvan/utils/badge/star.svg?theme=dark)](https://gitee.com/bestjarvan/utils)
 [![fork](https://gitee.com/bestjarvan/utils/badge/fork.svg?theme=dark)](https://gitee.com/bestjarvan/utils/members)
-[![npm](https://img.shields.io/bundlephobia/min/@jarvannnn/utils/0.0.11)](https://www.npmjs.com/package/@jarvannnn/utils)
 
 使用typescript搭建、rollup+gulp编译打包的一个小型工具包，欢迎fork、start
 
