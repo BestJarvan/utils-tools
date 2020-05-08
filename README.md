@@ -9,6 +9,13 @@
 
 [doc文档](https://bestjarvan.gitee.io/utils/)
 
+#### 使用说明
+
+```
+// 通过npm安装
+npm i --save @jarvannnn/utils
+```
+
 #### 文件目录
 ```
 .
@@ -38,7 +45,7 @@
 
 ```
 
-#### 测试通过率
+#### 100%测试通过率
 ```
  PASS  test/core/verify.spec.ts (6.704s)
  PASS  test/core/env.spec.ts (6.706s)
@@ -67,12 +74,6 @@ Tests:       51 passed, 51 total
 Snapshots:   0 total
 Time:        8.492s
 Ran all test suites.
-```
-#### 使用说明
-
-```
-// 通过npm安装
-npm i --save @jarvannnn/utils
 ```
 
 #### 参与贡献
