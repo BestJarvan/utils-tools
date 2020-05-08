@@ -63,6 +63,12 @@ const formatFlags = {
   ss: function (dateObj) {
     return formatNumber(dateObj.getSeconds())
   },
+  a: function (dateObj) {
+    return dateObj.getHours() < 12 ? 'am' : 'pm'
+  },
+  A: function (dateObj) {
+    return dateObj.getHours() < 12 ? 'AM' : 'PM'
+  },
 }
 
 /**

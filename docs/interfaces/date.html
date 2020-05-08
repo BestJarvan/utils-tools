@@ -101,7 +101,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in types/index.ts:321</li>
+									<li>Defined in types/index.ts:343</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -146,7 +146,7 @@ utils.formatHourTime(<span class="hljs-number">1587823200000</span>)    <span cl
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in types/index.ts:306</li>
+									<li>Defined in types/index.ts:328</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -156,9 +156,127 @@ utils.formatHourTime(<span class="hljs-number">1587823200000</span>)    <span cl
 								<dl class="tsd-comment-tags">
 									<dt>author</dt>
 									<dd><p>Jarvan</p>
+										<table>
+											<thead>
+												<tr>
+													<th>格式</th>
+													<th>含义</th>
+													<th>备注</th>
+													<th>举例</th>
+												</tr>
+											</thead>
+											<tbody><tr>
+													<td>yy</td>
+													<td>年</td>
+													<td></td>
+													<td>20</td>
+												</tr>
+												<tr>
+													<td>yyyy</td>
+													<td>年</td>
+													<td></td>
+													<td>2020</td>
+												</tr>
+												<tr>
+													<td>M</td>
+													<td>月</td>
+													<td>不补0</td>
+													<td>5</td>
+												</tr>
+												<tr>
+													<td>MM</td>
+													<td>月</td>
+													<td></td>
+													<td>05</td>
+												</tr>
+												<tr>
+													<td>d</td>
+													<td>日</td>
+													<td>不补0</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td>dd</td>
+													<td>日</td>
+													<td></td>
+													<td>01</td>
+												</tr>
+												<tr>
+													<td>D</td>
+													<td>日</td>
+													<td>一周第几天 周日-周六(0 - 6) 不补0</td>
+													<td>3</td>
+												</tr>
+												<tr>
+													<td>DD</td>
+													<td>日</td>
+													<td></td>
+													<td>03</td>
+												</tr>
+												<tr>
+													<td>h</td>
+													<td>小时</td>
+													<td>12小时制,须和 A 或 a 使用;不补0</td>
+													<td>9</td>
+												</tr>
+												<tr>
+													<td>hh</td>
+													<td>小时</td>
+													<td>12小时制,须和 A 或 a 使用</td>
+													<td>09</td>
+												</tr>
+												<tr>
+													<td>H</td>
+													<td>小时</td>
+													<td>24小时制;不补0</td>
+													<td>3</td>
+												</tr>
+												<tr>
+													<td>HH</td>
+													<td>小时</td>
+													<td>24小时制</td>
+													<td>03</td>
+												</tr>
+												<tr>
+													<td>m</td>
+													<td>分</td>
+													<td>不补0</td>
+													<td>4</td>
+												</tr>
+												<tr>
+													<td>mm</td>
+													<td>分</td>
+													<td></td>
+													<td>04</td>
+												</tr>
+												<tr>
+													<td>s</td>
+													<td>秒</td>
+													<td>不补0</td>
+													<td>05</td>
+												</tr>
+												<tr>
+													<td>ss</td>
+													<td>秒</td>
+													<td></td>
+													<td>05</td>
+												</tr>
+												<tr>
+													<td>a</td>
+													<td>am/pm</td>
+													<td></td>
+													<td>am</td>
+												</tr>
+												<tr>
+													<td>A</td>
+													<td>AM/PM</td>
+													<td></td>
+													<td>AM</td>
+												</tr>
+										</tbody></table>
 										<pre><code class="language-typescript">utils.formatTime(<span class="hljs-number">1587823200000</span>, <span class="hljs-string">'yyyy-MM-dd HH:mm:ss'</span>)    <span class="hljs-comment">// '2020-04-25 22:00:00'</span>
 utils.formatTime(<span class="hljs-number">1587823200000</span>, <span class="hljs-string">'yyyy-MM-dd'</span>)    <span class="hljs-comment">// '2020-04-25'</span>
-utils.formatTime(<span class="hljs-number">1587823200000</span>, <span class="hljs-string">'yyyy-M-d'</span>)    <span class="hljs-comment">// '2020-4-25'</span></code></pre>
+utils.formatTime(<span class="hljs-number">1587823200</span>, <span class="hljs-string">'yyyy-M-d'</span>)    <span class="hljs-comment">// '2020-4-25'</span></code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -192,7 +310,7 @@ utils.formatTime(<span class="hljs-number">1587823200000</span>, <span class="hl
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in types/index.ts:335</li>
+									<li>Defined in types/index.ts:357</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

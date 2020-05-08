@@ -1,3 +1,10 @@
+/*
+ * @Author: Yahui.Jiang
+ * @Date: 2020-05-08 09:59:17
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2020-05-08 10:23:05
+ * @Description:
+ */
 import utils from '../../src/index'
 
 describe('Date test', () => {
@@ -23,6 +30,10 @@ describe('Date test', () => {
       expect(utils.formatTime(1587769200, 'hh-m:s')).toBe('07-0:0')
       expect(utils.formatTime(1587787200, 'h-m:s')).toBe('12-0:0')
       expect(utils.formatTime(1587787200, 'hh-m:s')).toBe('12-0:0')
+      expect(utils.formatTime(1588903200, 'h A')).toBe('10 AM')
+      expect(utils.formatTime(1588903200, 'h a')).toBe('10 am')
+      expect(utils.formatTime(1588917600, 'h A')).toBe('2 PM')
+      expect(utils.formatTime(1588917600, 'h a')).toBe('2 pm')
     })
   })
 
