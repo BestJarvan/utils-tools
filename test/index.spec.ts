@@ -112,4 +112,15 @@ describe('Utils test', () => {
       expect(typeof utils.now).toBe('function')
     })
   })
+
+  // method模块
+  describe('Method test', () => {
+    test('Utils must have a throttle function', () => {
+      expect(typeof utils.throttle).toBe('function')
+    })
+
+    test('Utils must have a debounce function', () => {
+      expect(typeof utils.debounce).toBe('function')
+    })
+  })
 })

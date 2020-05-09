@@ -3,6 +3,7 @@ import * as verify from './core/verify'
 import * as format from './core/format'
 import * as is from './core/is'
 import * as date from './core/date'
+import * as method from './core/method'
 import { mixin } from './tools/index'
 import { Types } from './types'
 
@@ -13,7 +14,7 @@ export * from './types/index'
  */
 function initUtils(): Types {
   const instance = Object.create(null)
-  const arr = [env, verify, format, is, date]
+  const arr = [env, verify, format, is, date, method]
 
   mixin(instance, arr)
 

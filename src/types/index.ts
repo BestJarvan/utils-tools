@@ -344,9 +344,9 @@ interface Date {
 
   /**
    *
-   * 格式化时间 支持自定义格式 参考element-ui的时间格式
+   * 返回当前系统时间
    * @param long 是否需要 10位或者13位时间戳 默认为 10位时间戳
-   * @return {string} '2020-04-25 22:00:00'
+   * @return {string} '1587823200'
    * @author Jarvan
    * ``` typescript
    * utils.now()      // 1587823200
@@ -357,9 +357,31 @@ interface Date {
   now(long?: boolean): string
 }
 
+interface Method {
+  /**
+   *
+   * 节流函数
+   * @param fn 需要节流的方法
+   * @param delay 可选参数 下次运行时间间隔 单位毫秒ms 默认300
+   * @author Jarvan
+   *
+   */
+  throttle(fn: Function, delay?: number): Function
+
+  /**
+   *
+   * 节流函数
+   * @param fn 需要防抖的方法
+   * @param delay 可选参数 停顿多久执行 单位毫秒ms 默认300
+   * @author Jarvan
+   *
+   */
+  debounce(fn: Function, delay?: number): Function
+}
+
 /**
  *
  * @ignore
  *
  */
-export interface Types extends Env, Verify, Format, Is, Date {}
+export interface Types extends Env, Verify, Format, Is, Date, Method {}
