@@ -364,6 +364,17 @@ interface Method {
    * @param fn 需要节流的方法
    * @param delay 可选参数 下次运行时间间隔 单位毫秒ms 默认300
    * @author Jarvan
+   * ```typescript
+   * window.onscroll = utils.throttle(() => {
+   *   console.log(123)
+   * }, 1000)
+   *
+   * inputEnter(e) {
+   *   utils.throttle(() => {
+   *     console.log(e)
+   *   }, 800)() // 返回的是一个函数所以需要自调
+   * }
+   * ```
    *
    */
   throttle(fn: Function, delay?: number): Function
@@ -374,6 +385,17 @@ interface Method {
    * @param fn 需要防抖的方法
    * @param delay 可选参数 停顿多久执行 单位毫秒ms 默认300
    * @author Jarvan
+   * ```typescript
+   * window.onscroll = utils.debounce(() => {
+   *   console.log(123)
+   * }, 1000)
+   *
+   * inputEnter(e) {
+   *   utils.debounce(() => {
+   *     console.log(e)
+   *   }, 800)() // 返回的是一个函数所以需要自调
+   * }
+   * ```
    *
    */
   debounce(fn: Function, delay?: number): Function

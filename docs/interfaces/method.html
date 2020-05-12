@@ -100,7 +100,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in types/index.ts:379</li>
+									<li>Defined in types/index.ts:401</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -110,6 +110,15 @@
 								<dl class="tsd-comment-tags">
 									<dt>author</dt>
 									<dd><p>Jarvan</p>
+										<pre><code class="language-typescript"><span class="hljs-built_in">window</span>.onscroll = utils.debounce(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">123</span>)
+}, <span class="hljs-number">1000</span>)
+
+inputEnter(e) {
+  utils.debounce(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(e)
+  }, <span class="hljs-number">800</span>)() <span class="hljs-comment">// 返回的是一个函数所以需要自调</span>
+}</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -142,7 +151,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in types/index.ts:369</li>
+									<li>Defined in types/index.ts:380</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -152,6 +161,15 @@
 								<dl class="tsd-comment-tags">
 									<dt>author</dt>
 									<dd><p>Jarvan</p>
+										<pre><code class="language-typescript"><span class="hljs-built_in">window</span>.onscroll = utils.throttle(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">123</span>)
+}, <span class="hljs-number">1000</span>)
+
+inputEnter(e) {
+  utils.throttle(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(e)
+  }, <span class="hljs-number">800</span>)() <span class="hljs-comment">// 返回的是一个函数所以需要自调</span>
+}</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -215,6 +233,12 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="verify.html" class="tsd-kind-icon">Verify</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#debounce" class="tsd-kind-icon">debounce</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#throttle" class="tsd-kind-icon">throttle</a>
 					</li>
 				</ul>
 			</nav>

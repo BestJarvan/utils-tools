@@ -7,8 +7,8 @@
  * @ignore
  * 节流函数
  */
+let execute: boolean = false
 export function throttle(fn: Function, delay: number = 300): Function {
-  let execute: boolean = false
   return function (...args): void {
     if (execute) return
     execute = true
@@ -24,11 +24,12 @@ export function throttle(fn: Function, delay: number = 300): Function {
  * @ignore
  * 防抖函数
  */
+let timer
 export function debounce(fn: Function, delay: number = 300): Function {
-  let timer
   return function (...args) {
     timer && clearTimeout(timer)
     timer = setTimeout(() => {
+      timer = null
       // @ts-ignore
       fn.apply(this, args)
     }, delay)
