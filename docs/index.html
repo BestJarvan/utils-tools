@@ -69,10 +69,16 @@
 				</a>
 				<p><a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 					<a href="https://gitee.com/bestjarvan/utils/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
-					<a href="https://gitee.com/bestjarvan/utils"><img src="https://img.shields.io/badge/dynamic/json?color=informational&label=starts&query=stared&url=https%3A%2F%2Fgitee.com%2Fapi%2Fv5%2Fusers%2Fbestjarvan%3Faccess_token%3Ddc0634e3142b0620e7697bc9f5b328fd" alt="stars"></a>
-				<a href="https://www.npmjs.com/package/@jarvannnn/utils"><img src="https://img.shields.io/bundlephobia/min/@jarvannnn/utils/0.0.11" alt="npm"></a></p>
+					<a href="https://www.npmjs.com/package/@jarvannnn/utils"><img src="https://img.shields.io/bundlephobia/min/@jarvannnn/utils/0.0.11" alt="npm"></a>
+					<a href="https://gitee.com/bestjarvan/utils"><img src="https://gitee.com/bestjarvan/utils/badge/star.svg?theme=dark" alt="star"></a>
+				<a href="https://gitee.com/bestjarvan/utils/members"><img src="https://gitee.com/bestjarvan/utils/badge/fork.svg?theme=dark" alt="fork"></a></p>
 				<p>使用typescript搭建、rollup+gulp编译打包的一个小型工具包，欢迎fork、start</p>
 				<p><a href="https://bestjarvan.gitee.io/utils/">doc文档</a></p>
+				<a href="#使用说明" id="使用说明" style="color: inherit; text-decoration: none;">
+					<h4>使用说明</h4>
+				</a>
+				<pre><code><span class="hljs-regexp">//</span> 通过<span class="hljs-built_in">npm</span>安装
+<span class="hljs-built_in">npm</span> i --save @jarvannnn/utils</code></pre>
 				<a href="#文件目录" id="文件目录" style="color: inherit; text-decoration: none;">
 					<h4>文件目录</h4>
 				</a>
@@ -101,15 +107,18 @@
 ├── <span class="hljs-selector-class">.lintstagedrc</span> <span class="hljs-comment">// lintstage配置</span>
 └── typedoc<span class="hljs-selector-class">.json</span> <span class="hljs-comment">// typedoc配置</span>
 </code></pre>
-				<a href="#测试通过率" id="测试通过率" style="color: inherit; text-decoration: none;">
-					<h4>测试通过率</h4>
+				<a href="#100测试通过率" id="100测试通过率" style="color: inherit; text-decoration: none;">
+					<h4>100%测试通过率</h4>
 				</a>
-				<pre><code> PASS  test/core/verify.spec.ts (6.704s)
- PASS  test/core/env.spec.ts (6.706s)
- PASS  test/core/is.spec.ts (6.71s)
- PASS  test/core/format.spec.ts (6.715s)
- PASS  test/core/date.spec.ts (6.742s)
- PASS  test/index.spec.ts (6.75s)
+				<pre><code>&gt; jest --coverage
+
+ PASS  test/core/verify.spec.ts
+ PASS  test/core/is.spec.ts
+ PASS  test/core/env.spec.ts
+ PASS  test/index.spec.ts
+ PASS  test/core/format.spec.ts
+ PASS  test/core/date.spec.ts
+ PASS  test/core/method.spec.ts
 ------------|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
 File        </span>|<span class="hljs-string"> % Stmts </span>|<span class="hljs-string"> % Branch </span>|<span class="hljs-string"> % Funcs </span>|<span class="hljs-string"> % Lines </span>|<span class="hljs-string"> Uncovered Line #s 
 ------------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
@@ -121,21 +130,17 @@ All files   </span>|<span class="hljs-string">     100 </span>|<span class="hljs
   env.ts    </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
   format.ts </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
   is.ts     </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
+  method.ts </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
   verify.ts </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
  src/tools  </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
   index.ts  </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
 ------------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
 
-Test Suites: 6 passed, 6 total
-Tests:       51 passed, 51 total
+Test Suites: 7 passed, 7 total
+Tests:       57 passed, 57 total
 Snapshots:   0 total
-Time:        8.492s
+Time:        3.985s, estimated 4s
 Ran all test suites.</span></code></pre>
-				<a href="#使用说明" id="使用说明" style="color: inherit; text-decoration: none;">
-					<h4>使用说明</h4>
-				</a>
-				<pre><code><span class="hljs-regexp">//</span> 通过<span class="hljs-built_in">npm</span>安装
-<span class="hljs-built_in">npm</span> i --save @jarvannnn/utils</code></pre>
 				<a href="#参与贡献" id="参与贡献" style="color: inherit; text-decoration: none;">
 					<h4>参与贡献</h4>
 				</a>
@@ -168,6 +173,9 @@ Ran all test suites.</span></code></pre>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/is.html" class="tsd-kind-icon">Is</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/method.html" class="tsd-kind-icon">Method</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/verify.html" class="tsd-kind-icon">Verify</a>
