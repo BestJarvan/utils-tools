@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-04-25 13:27:11
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2020-05-09 15:53:40
- * @Description:
- */
 /**
  * @ignore
  * 方法类
