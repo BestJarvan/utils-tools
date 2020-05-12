@@ -47,12 +47,15 @@ npm i --save @jarvannnn/utils
 
 #### 100%测试通过率
 ```
- PASS  test/core/verify.spec.ts (6.704s)
- PASS  test/core/env.spec.ts (6.706s)
- PASS  test/core/is.spec.ts (6.71s)
- PASS  test/core/format.spec.ts (6.715s)
- PASS  test/core/date.spec.ts (6.742s)
- PASS  test/index.spec.ts (6.75s)
+> jest --coverage
+
+ PASS  test/core/verify.spec.ts
+ PASS  test/core/is.spec.ts
+ PASS  test/core/env.spec.ts
+ PASS  test/index.spec.ts
+ PASS  test/core/format.spec.ts
+ PASS  test/core/date.spec.ts
+ PASS  test/core/method.spec.ts
 ------------|---------|----------|---------|---------|-------------------
 File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------|---------|----------|---------|---------|-------------------
@@ -64,15 +67,16 @@ All files   |     100 |      100 |     100 |     100 |
   env.ts    |     100 |      100 |     100 |     100 |                   
   format.ts |     100 |      100 |     100 |     100 |                   
   is.ts     |     100 |      100 |     100 |     100 |                   
+  method.ts |     100 |      100 |     100 |     100 |                   
   verify.ts |     100 |      100 |     100 |     100 |                   
  src/tools  |     100 |      100 |     100 |     100 |                   
   index.ts  |     100 |      100 |     100 |     100 |                   
 ------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 6 passed, 6 total
-Tests:       51 passed, 51 total
+Test Suites: 7 passed, 7 total
+Tests:       57 passed, 57 total
 Snapshots:   0 total
-Time:        8.492s
+Time:        3.985s, estimated 4s
 Ran all test suites.
 ```
 
