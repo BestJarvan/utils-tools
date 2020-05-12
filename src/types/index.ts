@@ -370,7 +370,7 @@ interface Method {
 
   /**
    *
-   * 节流函数
+   * 防抖函数
    * @param fn 需要防抖的方法
    * @param delay 可选参数 停顿多久执行 单位毫秒ms 默认300
    * @author Jarvan
