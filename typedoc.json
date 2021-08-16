@@ -1,0 +1,5 @@
+{
+  "inputFiles": ["./src"],
+  "mode": "file",
+  "out": "docs"
+}

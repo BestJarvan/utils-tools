@@ -1,0 +1,6 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "vueIndentScriptAndStyle": true,
+  "arrowParens": "avoid"
+}
