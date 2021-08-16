@@ -114,7 +114,6 @@ v1.1.3    | 修复throttle、debounce，标识变量移动到函数内部，thum
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+1.  新建 feature/xxx 分支
+2.  提交代码
+3.  新建 Merge Request
