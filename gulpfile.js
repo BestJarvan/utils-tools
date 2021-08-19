@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 10:08:11
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2020-12-17 17:29:51
+ * @LastEditTime: 2021-08-19 16:03:00
  * @Description: 
  */
 const gulp = require('gulp')
@@ -39,14 +39,18 @@ async function task_ts () {
       // Resolve source maps to the original source
       sourceMaps(),
       uglify(),
-    ]
+    ],
+    external: ['lodash']
   });
 
   await bundle.write({
     file: pkg.main,
     format: 'umd',
     name: pkg.name,
-    sourcemap: false
+    sourcemap: false,
+    globals: {
+      lodash: 'lodash',
+    }
   })
 }
 

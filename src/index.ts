@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: 陈祖康
- * @LastEditTime: 2021-03-19 13:48:00
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2021-08-19 17:18:07
  * @Description:
  */
 import * as index from './core/index'
@@ -14,6 +14,8 @@ import * as method from './core/method'
 import * as math from './core/math'
 import * as url from './core/url'
 import * as uuid from './core/uuid'
+import * as lodash from './core/lodash-tool'
+
 import { mixin } from './tools/index'
 import { Types } from './types'
 
@@ -22,7 +24,8 @@ import { Types } from './types'
  */
 function initUtils(): Types {
   const instance: object = Object.create(null)
-  const arr: Array<any> = [index, verify, format, is, date, method, math, url, uuid]
+  console.log(lodash, 'lodash=======', index)
+  const arr: Array<any> = [index, verify, format, is, date, method, math, url, uuid, lodash]
 
   mixin(instance, arr)
 
