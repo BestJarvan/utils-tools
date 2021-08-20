@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-07-05 16:36:18
+ * @LastEditTime: 2021-08-20 16:31:19
  * @Description:
  */
 import { formatAddZero } from './format'
@@ -222,7 +222,7 @@ export function formatTimeCompare(time?: number | string): string | void {
     return `${parseInt(`${poor / 3600}`, 0)}小时前`
   } else if (curDay < time) {
     // 超过5小时但在今日内
-    return `'今日${formatDate(time, 'datetime').slice(11)}'`
+    return `今日${formatDate(time, 'datetime').slice(11)}`
     // } else if (parseInt(poor) < (1 * 60 * 60 * 24 * 7)) {
     //   return '一周内'
     // } else if (parseInt(poor) < (2 * 60 * 60 * 24 * 7)) {

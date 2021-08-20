@@ -4,14 +4,14 @@
  * @return {Array} 过滤出url的非空值
  *
  */
-export declare function cleanArray(actual: any): Array<any>
+export declare function cleanArray(actual: any): Array<any>;
 /**
  *
  * @ignore
  * @return {string} 对象转成url的param
  *
  */
-export declare function param(json: Record<string, any>): string
+export declare function param(json: Record<string, any>): string;
 /**
  *
  * @ignore
@@ -24,4 +24,4 @@ export declare function param(json: Record<string, any>): string
  * @return {object} 解析url中的参数
  *
  */
-export declare function param2Obj(search: string): Record<string, any>
+export declare function param2Obj(search: string): Record<string, any>;

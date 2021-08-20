@@ -1,6 +1,6 @@
-import { Types } from './types'
+import { Types } from './types';
 /**
  * @ignore
  */
-declare const _utils: Types
-export default _utils
+declare const _utils: Types;
+export default _utils;

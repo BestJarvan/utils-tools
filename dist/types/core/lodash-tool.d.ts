@@ -1,5 +1,5 @@
-declare const _default: {}
+declare const _default: {};
 /**
  * @ignore
  */
-export default _default
+export default _default;
