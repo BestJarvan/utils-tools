@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-08-19 17:12:38
+ * @LastEditTime: 2021-08-30 14:49:50
  * @Description:
  */
 
@@ -688,7 +688,7 @@ interface LodashTool {
    * @param {Array} [array] 目标对象
    * @returns {Number} -1为没找到对应的值，其余为数组对应的index
    * @example
-   * * users = [
+   * * array = [
    * *   { 'user': 'barney', 'active': false },
    * *   { 'user': 'fred', 'active': false },
    * *   { 'user': 'pebbles', 'active': true }
@@ -699,6 +699,23 @@ interface LodashTool {
    * * utils._findIndex(array, 'active') => 2 （推荐使用）
    */
   _findIndex (array: Array<any>, predicate: any, fromIndex?: number): number
+ 
+  /**
+   * @description 该方法类似find，区别是该方法返回第一个通过 predicate 判断为真值的元素的索引值（index），而不是元素本身。
+   * @param {Array} [array] 目标对象
+   * @returns {Number} -1为没找到对应的值，其余为数组对应的index
+   * @example
+   * * array = [
+   * *   { 'user': 'barney', 'active': false },
+   * *   { 'user': 'fred', 'active': false },
+   * *   { 'user': 'pebbles', 'active': true }
+   * * ]
+   * * utils._findLastIndex(array, function(o) { return o.user == 'pebbles'; }) => 2
+   * * utils._findLastIndex(array, { 'user': 'barney', 'active': true }) => 0 （推荐使用）
+   * * utils._findLastIndex(array, ['active', false]) => 2 （推荐使用）
+   * * utils._findLastIndex(array, 'active') => 0 （推荐使用）
+   */
+  _findLastIndex (array: Array<any>, predicate: Array<any>|Function|object|string, fromIndex?: number): number
 
   /**
    * @description 数组去重（纯数组）

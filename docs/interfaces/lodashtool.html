@@ -82,6 +82,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_findindex" class="tsd-kind-icon">_find<wbr>Index</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_findlastindex" class="tsd-kind-icon">_find<wbr>Last<wbr>Index</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_get" class="tsd-kind-icon">_get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_isnan" class="tsd-kind-icon">_is<wbr>NaN</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_isundefined" class="tsd-kind-icon">_is<wbr>Undefined</a></li>
@@ -116,7 +117,7 @@
 									</dd>
 									<dt>example</dt>
 									<dd><ul>
-											<li>users = [</li>
+											<li>array = [</li>
 											<li>{ &#39;user&#39;: &#39;barney&#39;, &#39;active&#39;: false },</li>
 											<li>{ &#39;user&#39;: &#39;fred&#39;, &#39;active&#39;: false },</li>
 											<li>{ &#39;user&#39;: &#39;pebbles&#39;, &#39;active&#39;: true }</li>
@@ -136,6 +137,56 @@
 								</li>
 								<li>
 									<h5>predicate: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fromIndex: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>-1为没找到对应的值，其余为数组对应的index</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="_findlastindex" class="tsd-anchor"></a>
+					<h3>_find<wbr>Last<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">_find<wbr>Last<wbr>Index<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, fromIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:718</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description</dt>
+									<dd><p>该方法类似find，区别是该方法返回第一个通过 predicate 判断为真值的元素的索引值（index），而不是元素本身。</p>
+									</dd>
+									<dt>example</dt>
+									<dd><ul>
+											<li>array = [</li>
+											<li>{ &#39;user&#39;: &#39;barney&#39;, &#39;active&#39;: false },</li>
+											<li>{ &#39;user&#39;: &#39;fred&#39;, &#39;active&#39;: false },</li>
+											<li>{ &#39;user&#39;: &#39;pebbles&#39;, &#39;active&#39;: true }</li>
+											<li>]</li>
+											<li>utils._findLastIndex(array, function(o) { return o.user == &#39;pebbles&#39;; }) =&gt; 2</li>
+											<li>utils._findLastIndex(array, { &#39;user&#39;: &#39;barney&#39;, &#39;active&#39;: true }) =&gt; 0 （推荐使用）</li>
+											<li>utils._findLastIndex(array, [&#39;active&#39;, false]) =&gt; 2 （推荐使用）</li>
+											<li>utils._findLastIndex(array, &#39;active&#39;) =&gt; 0 （推荐使用）</li>
+										</ul>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>array: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>predicate: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fromIndex: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
@@ -197,7 +248,7 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/types/index.ts:743</li>
+									<li>Defined in src/types/index.ts:760</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -234,7 +285,7 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/types/index.ts:734</li>
+									<li>Defined in src/types/index.ts:751</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -271,7 +322,7 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/types/index.ts:725</li>
+									<li>Defined in src/types/index.ts:742</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -310,7 +361,7 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/types/index.ts:717</li>
+									<li>Defined in src/types/index.ts:734</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -349,7 +400,7 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/types/index.ts:751</li>
+									<li>Defined in src/types/index.ts:768</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -390,7 +441,7 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/types/index.ts:709</li>
+									<li>Defined in src/types/index.ts:726</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -447,6 +498,9 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_findindex" class="tsd-kind-icon">_find<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="lodashtool.html#_findlastindex" class="tsd-kind-icon">_find<wbr>Last<wbr>Index</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_get" class="tsd-kind-icon">_get</a>

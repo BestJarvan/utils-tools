@@ -6,5 +6,6 @@ import _omit from 'lodash/omit';
 import _isNaN from 'lodash/isNaN';
 import _property from 'lodash/property';
 import _findIndex from 'lodash/findIndex';
+import _findLastIndex from 'lodash/findLastIndex';
 import _trim from 'lodash/trim';
-export { _get, _map, _property, _findIndex, _uniq, _pick, _omit, _isNaN, _trim };
+export { _get, _map, _property, _findIndex, _findLastIndex, _uniq, _pick, _omit, _isNaN, _trim };
