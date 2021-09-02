@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-07-02 09:37:02
+ * @LastEditors: pengfei.li
+ * @LastEditTime: 2021-09-02 10:05:30
  * @Description:
  */
 
@@ -521,6 +521,13 @@ interface Datefromat {
    * @return {string|number}
    */
   timeToTimestamp(time: string): string | number
+
+  /**
+   * 将秒数转为HH:MM:SS格式
+   * @param {number} s :秒数，不是毫秒
+   * @return {string}
+   */
+  formatSecond(s: number): string
 }
 
 interface Method {

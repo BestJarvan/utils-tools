@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-08-20 16:31:19
+ * @LastEditors: pengfei.li
+ * @LastEditTime: 2021-08-31 17:18:18
  * @Description:
  */
 import { formatAddZero } from './format'
@@ -357,4 +357,38 @@ export function timeToTimestamp(time: string): string | number {
   } else {
     return time
   }
+}
+
+/**
+ * @ignore
+ * @description 将秒数转为HH:MM:SS格式
+ */
+export function formatSecond(s: number): string {
+  let second: number = Math.floor(s)
+  let hourTime: number = 0
+  let minuteTime: number = 0
+  let secondTime: number = 0
+  if (second > 60) {
+    // 如果秒数大于60
+    minuteTime = Math.floor(second / 60)
+    secondTime = Math.floor(second % 60)
+    if (minuteTime >= 60) {
+      // 如果分钟大于60
+      hourTime = Math.floor(minuteTime / 60)
+      minuteTime = Math.floor(minuteTime % 60)
+    } else {
+      hourTime = 0
+    }
+  } else {
+    hourTime = 0
+    minuteTime = 0
+    if (second === 60) {
+      // 如果秒数等于60
+      minuteTime = 1
+      secondTime = 0
+    } else {
+      secondTime = second
+    }
+  }
+  return formatAddZero(hourTime) + ':' + formatAddZero(minuteTime) + ':' + formatAddZero(secondTime)
 }
