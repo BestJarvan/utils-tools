@@ -109,6 +109,7 @@ v1.1.0    | 优化math方法，新增thumbnail, formatToNumber, dealNumber, getG
 v1.1.1    | 开启命名空间
 v1.1.2    | 修复thumbnail方法判断，若传入空数组报错的bug
 v1.1.3    | 修复throttle、debounce，标识变量移动到函数内部，thumbnail方法支持更大图片格式
+v1.1.5    | 新增方法，正常迭代
 ----------|------------------------
 ```
 

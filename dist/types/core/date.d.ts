@@ -77,4 +77,9 @@ export declare function timestampToTimeString(timestamp: string | number, type: 
  * @description 将日期转换为时间戳的格式
  */
 export declare function timeToTimestamp(time: string): string | number;
+/**
+ * @ignore
+ * @description 将秒数转为HH:MM:SS格式
+ */
+export declare function formatSecond(s: number): string;
 export {};

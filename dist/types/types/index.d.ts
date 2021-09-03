@@ -471,6 +471,12 @@ interface Datefromat {
      * @return {string|number}
      */
     timeToTimestamp(time: string): string | number;
+    /**
+     * 将秒数转为HH:MM:SS格式
+     * @param {number} s :秒数，不是毫秒
+     * @return {string}
+     */
+    formatSecond(s: number): string;
 }
 interface Method {
     /**
