@@ -1,8 +1,8 @@
 /*
  * @Author: 崔佳华
  * @Date: 2021-03-17 16:41:38
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-07-02 09:52:47
+ * @LastEditors: pengfei.li
+ * @LastEditTime: 2021-09-06 09:28:56
  * @Description:
  * @Props:
  * @Emit:
@@ -132,5 +132,16 @@ describe('Index test', () => {
     expect(utils.thumbnail('aaa?1123131', 90)).toBe('aaa_100x100.jpg')
     expect(utils.thumbnail(['aaa?1123131'], 80)).toBe('aaa_80x80.jpg')
     expect(utils.thumbnail(['aaa?1123131'])).toBe('aaa_100x100.jpg')
+  })
+
+  test('将秒数转为HH:MM:SS格式', () => {
+    expect(utils.formatSecond(10)).toBe('00:00:10')
+    expect(utils.formatSecond(60)).toBe('00:01:00')
+    expect(utils.formatSecond(3000)).toBe('00:50:00')
+    expect(utils.formatSecond(3600)).toBe('01:00:00')
+    expect(utils.formatSecond(4215)).toBe('01:10:15')
+    expect(utils.formatSecond(3660)).toBe('01:01:00')
+    expect(utils.formatSecond(3670)).toBe('01:01:10')
+    expect(utils.formatSecond(3610)).toBe('01:00:10')
   })
 })
