@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-17 16:41:38
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-10 17:05:54
+ * @LastEditTime: 2021-09-10 17:26:42
  * @Description:
  * @Props:
  * @Emit:
@@ -132,6 +132,24 @@ describe('Index test', () => {
     expect(utils.thumbnail('aaa?1123131', 90)).toBe('aaa_100x100.jpg')
     expect(utils.thumbnail(['aaa?1123131'], 80)).toBe('aaa_80x80.jpg')
     expect(utils.thumbnail(['aaa?1123131'])).toBe('aaa_100x100.jpg')
+    expect(
+      utils.thumbnail(
+        'https://wework.qpic.cn/bizmail/nfSKvz2M9u2KzuCZG068h5mT4h8iaeia0RbT8IslibwwGjOoWj0XhQrsg/0',
+        40
+      )
+    ).toBe(
+      'https://wework.qpic.cn/bizmail/nfSKvz2M9u2KzuCZG068h5mT4h8iaeia0RbT8IslibwwGjOoWj0XhQrsg/100'
+    )
+    expect(
+      utils.thumbnail(
+        [
+          'https://rescdn.qqmail.com/node/wwmng/wwmng/style/images/independent/DefaultAvatar$73ba92b5.png',
+        ],
+        40
+      )
+    ).toBe(
+      'https://rescdn.qqmail.com/node/wwmng/wwmng/style/images/independent/DefaultAvatar$73ba92b5.png'
+    )
   })
 
   test('将秒数转为HH:MM:SS格式', () => {
@@ -169,5 +187,22 @@ describe('Index test', () => {
       'Mozilla/5.0 (WindowsWechat; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wxwork/3.1.12 (MicroMessenger/6.2) WeChat/2.0.4'
     expect(utils.isThirdPC(['wx'])).toBeTruthy()
     expect(utils.isThirdPC(['lark'])).toBeFalsy()
+  })
+
+  test('是否企微图片', () => {
+    expect(
+      utils.isWxImg(
+        'https://wework.qpic.cn/bizmail/nfSKvz2M9u2KzuCZG068h5mT4h8iaeia0RbT8IslibwwGjOoWj0XhQrsg/0'
+      )
+    ).toBe(
+      'https://wework.qpic.cn/bizmail/nfSKvz2M9u2KzuCZG068h5mT4h8iaeia0RbT8IslibwwGjOoWj0XhQrsg/100'
+    )
+    expect(
+      utils.isWxImg(
+        'https://rescdn.qqmail.com/node/wwmng/wwmng/style/images/independent/DefaultAvatar$73ba92b5.png'
+      )
+    ).toBe(
+      'https://rescdn.qqmail.com/node/wwmng/wwmng/style/images/independent/DefaultAvatar$73ba92b5.png'
+    )
   })
 })
