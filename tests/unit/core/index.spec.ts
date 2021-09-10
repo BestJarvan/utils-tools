@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-17 16:41:38
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-10 15:09:46
+ * @LastEditTime: 2021-09-10 17:05:54
  * @Description:
  * @Props:
  * @Emit:
@@ -146,14 +146,28 @@ describe('Index test', () => {
   })
 
   test('移动端判断是否当前多平台环境', () => {
-    expect(utils.envInfo(['wx'])).toBeFalsy()
-    expect(utils.isThirdPC([''])).toBeFalsy()
-    expect(utils.isThirdPC(['123'])).toBeFalsy()
+    // @ts-ignore
+    window.navigator.userAgent =
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) wxwork Chrome/93.0.4577.63 Safari/537.36'
+    expect(utils.envInfo(['wx', 'lark'])).toBeTruthy()
+    // @ts-ignore
+    window.navigator.userAgent =
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) DingTalk Chrome/93.0.4577.63 Safari/537.36'
+    expect(utils.envInfo(['dd'])).toBeTruthy()
+    // @ts-ignore
+    window.navigator.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
+    expect(utils.envInfo(['123'])).toBeFalsy()
   })
 
   test('判断是否第三方pc端', () => {
-    expect(utils.isThirdPC(['wx'])).toBeFalsy()
-    expect(utils.isThirdPC([''])).toBeFalsy()
-    expect(utils.isThirdPC(['123'])).toBeFalsy()
+    // @ts-ignore
+    window.navigator.userAgent =
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) wxwork Chrome/93.0.4577.63 Safari/537.36'
+    expect(utils.isThirdPC(['wx'])).toBeTruthy()
+    // @ts-ignore
+    window.navigator.userAgent =
+      'Mozilla/5.0 (WindowsWechat; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wxwork/3.1.12 (MicroMessenger/6.2) WeChat/2.0.4'
+    expect(utils.isThirdPC(['wx'])).toBeTruthy()
+    expect(utils.isThirdPC(['lark'])).toBeFalsy()
   })
 })

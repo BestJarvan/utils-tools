@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-16 15:09:35
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-10 14:48:17
+ * @LastEditTime: 2021-09-10 16:53:12
  * @Description:
  * @Props:
  * @Emit:
@@ -174,8 +174,8 @@ export function browser(): string {
  * @description 是否企微图片
  */
 export function isWxImg(img: string): string {
-  if ('wework.qpic.cn'.indexOf(img) > -1) return img.slice(0, -1) + '100'
-  if (['rescdn.qqmail.com', 'wx.qlogo.cn'].indexOf(img) > -1) return img
+  if (img.indexOf('wework.qpic.cn') > -1) return img.slice(0, -1) + '100'
+  if (/rescdn.qqmail.com|wx.qlogo.cn/.test(img)) return img
   return ''
 }
 
@@ -216,5 +216,7 @@ export function isThirdPC(name: string[]): boolean {
   const navigator: string = window.navigator.userAgent
   // 企微windows容器 不一样
   const winPC = name.indexOf('wx') > -1 ? 'WindowsWechat' : 'Windows'
-  return envInfo(name) && [winPC, 'Macintosh'].indexOf(navigator) > -1
+  const regStr = `${winPC}|Macintosh`
+  const reg = new RegExp(regStr)
+  return envInfo(name) && reg.test(navigator)
 }
