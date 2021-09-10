@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:27:51
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-07-02 10:08:10
+ * @LastEditors: zihao.chen
+ * @LastEditTime: 2021-09-10 15:05:56
  * @Description:
  */
 import utils from '../../src/index'
@@ -213,6 +213,14 @@ describe('Utils test', () => {
 
     test('Utils must hava thumbnail function', () => {
       expect(typeof utils.thumbnail).toBe('function')
+    })
+
+    test('Utils must hava isThirdPC function', () => {
+      expect(typeof utils.isThirdPC).toBe('function')
+    })
+
+    test('Utils must hava envInfo function', () => {
+      expect(typeof utils.envInfo).toBe('function')
     })
   })
 })

@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-10 14:10:35
+ * @LastEditTime: 2021-09-10 15:24:56
  * @Description:
  */
 
@@ -108,17 +108,17 @@ interface Index {
 
   /**
    * @description  移动端-判断是否当前多平台
-   * @param {string[]} name 平台名称：[wx,lark,h5,dd]
-   * @return {boolean}
+   * @param {string[]} name 平台名称支持：['wx','lark','h5','dd']
+   * @return {boolean} ture:当前环境为传入的平台其中一个
    */
   envInfo(name: string[]): boolean
 
   /**
    * @description  是否多平台pc端
-   * @param {string[]} name 平台名称：[wx,lark,h5,dd]
-   * @return {boolean}
+   * @param {string[]} name 平台名称支持：['wx','lark','h5','dd']
+   * @return {boolean} ture:当前环境为传入的平台其中一个
    */
-  isThirdPC(name: string): boolean
+  isThirdPC(name: string[]): boolean
 }
 interface Verify {
   /**

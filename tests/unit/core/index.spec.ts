@@ -1,8 +1,8 @@
 /*
  * @Author: 崔佳华
  * @Date: 2021-03-17 16:41:38
- * @LastEditors: pengfei.li
- * @LastEditTime: 2021-09-06 09:28:56
+ * @LastEditors: zihao.chen
+ * @LastEditTime: 2021-09-10 15:09:46
  * @Description:
  * @Props:
  * @Emit:
@@ -143,5 +143,17 @@ describe('Index test', () => {
     expect(utils.formatSecond(3660)).toBe('01:01:00')
     expect(utils.formatSecond(3670)).toBe('01:01:10')
     expect(utils.formatSecond(3610)).toBe('01:00:10')
+  })
+
+  test('移动端判断是否当前多平台环境', () => {
+    expect(utils.envInfo(['wx'])).toBeFalsy()
+    expect(utils.isThirdPC([''])).toBeFalsy()
+    expect(utils.isThirdPC(['123'])).toBeFalsy()
+  })
+
+  test('判断是否第三方pc端', () => {
+    expect(utils.isThirdPC(['wx'])).toBeFalsy()
+    expect(utils.isThirdPC([''])).toBeFalsy()
+    expect(utils.isThirdPC(['123'])).toBeFalsy()
   })
 })
