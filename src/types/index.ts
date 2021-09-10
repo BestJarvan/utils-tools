@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: pengfei.li
- * @LastEditTime: 2021-09-02 10:05:30
+ * @LastEditors: zihao.chen
+ * @LastEditTime: 2021-09-10 14:10:35
  * @Description:
  */
 
@@ -98,6 +98,27 @@ interface Index {
    * @return {string} 图片地址
    */
   thumbnail(img: string | string[], size?: number): string
+
+  /**
+   * @description  是否企微图片
+   * @param {string} img 图片数据
+   * @return {string} 图片地址
+   */
+  isWxImg(img: string): string
+
+  /**
+   * @description  移动端-判断是否当前多平台
+   * @param {string[]} name 平台名称：[wx,lark,h5,dd]
+   * @return {boolean}
+   */
+  envInfo(name: string[]): boolean
+
+  /**
+   * @description  是否多平台pc端
+   * @param {string[]} name 平台名称：[wx,lark,h5,dd]
+   * @return {boolean}
+   */
+  isThirdPC(name: string): boolean
 }
 interface Verify {
   /**

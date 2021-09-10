@@ -2,13 +2,13 @@
  * @Author: 崔佳华
  * @Date: 2021-03-16 15:09:35
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-08-16 11:03:26
+ * @LastEditTime: 2021-09-10 14:48:17
  * @Description:
  * @Props:
  * @Emit:
  */
 import { isArray } from './is'
-
+import { System } from '../enum/system'
 /**
  * @ignore
  * @description 解析JSON Object，并加入异常处理
@@ -171,13 +171,25 @@ export function browser(): string {
 
 /**
  * @ignore
+ * @description 是否企微图片
+ */
+export function isWxImg(img: string): string {
+  if ('wework.qpic.cn'.indexOf(img) > -1) return img.slice(0, -1) + '100'
+  if (['rescdn.qqmail.com', 'wx.qlogo.cn'].indexOf(img) > -1) return img
+  return ''
+}
+
+/**
+ * @ignore
  * @description 获取图片地址
  */
 export function thumbnail(img: string | string[], size?: number): string {
   let imgUrl: any = isArray(img) && img[0] ? img[0] : img
-
   // 判断imgURL格式
   if (!imgUrl || typeof imgUrl !== 'string') return ''
+  // 企业微信头像的判断
+  const wxImg: string = isWxImg(imgUrl)
+  if (wxImg) return wxImg
   // 兼容老数据
   imgUrl = imgUrl.replace(/\?\d+$/, '')
   // 判断size是否有效
@@ -185,4 +197,24 @@ export function thumbnail(img: string | string[], size?: number): string {
     size = 100
   }
   return `${imgUrl}_${size}x${size}.jpg`
+}
+
+/**
+ * @ignore
+ * @description 移动端判断是否当前多平台环境
+ */
+export function envInfo(name: string[]): boolean {
+  const navigator: string = window.navigator.userAgent
+  return name.some(item => navigator.indexOf(System[item]) > -1)
+}
+
+/**
+ * @ignore
+ * @description 判断是否第三方pc端
+ */
+export function isThirdPC(name: string[]): boolean {
+  const navigator: string = window.navigator.userAgent
+  // 企微windows容器 不一样
+  const winPC = name.indexOf('wx') > -1 ? 'WindowsWechat' : 'Windows'
+  return envInfo(name) && [winPC, 'Macintosh'].indexOf(navigator) > -1
 }
