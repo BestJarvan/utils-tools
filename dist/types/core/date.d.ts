@@ -41,6 +41,11 @@ export declare function formatEffectiveDate(date?: any): Date;
  * @description 转化时间格式
  */
 declare type dateType = Date | string | number;
+/**
+ *
+ * @ignore
+ * @description 转化时间格式
+ */
 export declare function formatDate(d: dateType, type?: string): string;
 /**
  * @ignore

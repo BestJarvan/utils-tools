@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: pengfei.li
- * @LastEditTime: 2021-08-31 17:18:18
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2021-09-10 17:11:27
  * @Description:
  */
 import { formatAddZero } from './format'
@@ -185,6 +185,11 @@ export function formatEffectiveDate(date?: any): Date {
  * @description 转化时间格式
  */
 type dateType = Date | string | number
+/**
+ *
+ * @ignore
+ * @description 转化时间格式
+ */
 export function formatDate(d: dateType, type?: string): string {
   d = timeZone(formatEffectiveDate(d))
   // 输出 datetime
@@ -364,10 +369,10 @@ export function timeToTimestamp(time: string): string | number {
  * @description 将秒数转为HH:MM:SS格式
  */
 export function formatSecond(s: number): string {
-  let second: number = Math.floor(s)
-  let hourTime: number = 0
-  let minuteTime: number = 0
-  let secondTime: number = 0
+  const second: number = Math.floor(s)
+  let hourTime = 0
+  let minuteTime = 0
+  let secondTime = 0
   if (second > 60) {
     // 如果秒数大于60
     minuteTime = Math.floor(second / 60)
