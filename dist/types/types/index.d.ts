@@ -79,6 +79,24 @@ interface Index {
      * @return {string} 图片地址
      */
     thumbnail(img: string | string[], size?: number): string;
+    /**
+     * @description  是否企微图片
+     * @param {string} img 图片数据
+     * @return {string} 图片地址
+     */
+    isWxImg(img: string): string;
+    /**
+     * @description  移动端-判断是否当前多平台
+     * @param {string[]} name 平台名称支持：['wx','lark','h5','dd']
+     * @return {boolean} ture:当前环境为传入的平台其中一个
+     */
+    envInfo(name: string[]): boolean;
+    /**
+     * @description  是否多平台pc端
+     * @param {string[]} name 平台名称支持：['wx','lark','h5','dd']
+     * @return {boolean} ture:当前环境为传入的平台其中一个
+     */
+    isThirdPC(name: string[]): boolean;
 }
 interface Verify {
     /**

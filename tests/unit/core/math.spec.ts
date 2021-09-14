@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2021-03-18 10:05:08
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-07-27 15:28:03
+ * @LastEditTime: 2021-09-14 15:55:25
  * @Description:
  */
 import utils from '../../../src/index'
@@ -14,7 +14,7 @@ describe('Math test', () => {
     expect(utils.plus(1.23456, 2, 2)).toBe(3.23)
     expect(utils.plus(14, 20)).toBe(34)
     expect(utils.plus(1e1, 2)).toBe(12)
-    expect(utils.plus('a', 2)).toBe(NaN)
+    expect(utils.plus('a', 2)).toBe(0)
   })
 
   it('subtract method must return a number', () => {

@@ -83,12 +83,15 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#browser" class="tsd-kind-icon">browser</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#deepclone" class="tsd-kind-icon">deep<wbr>Clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#envinfo" class="tsd-kind-icon">env<wbr>Info</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#getbytelen" class="tsd-kind-icon">get<wbr>Byte<wbr>Len</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#getobjecttype" class="tsd-kind-icon">get<wbr>Object<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#getparamvalues" class="tsd-kind-icon">get<wbr>Param<wbr>Values</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#isdevenv" class="tsd-kind-icon">is<wbr>Dev<wbr>Env</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#isdingtalk" class="tsd-kind-icon">is<wbr>Ding<wbr>Talk</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#isouterlinkenv" class="tsd-kind-icon">is<wbr>Outer<wbr>Link<wbr>Env</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#isthirdpc" class="tsd-kind-icon">is<wbr>ThirdPC</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#iswximg" class="tsd-kind-icon">is<wbr>WxImg</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#json" class="tsd-kind-icon">json</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#norepeatarray" class="tsd-kind-icon">no<wbr>Repeat<wbr>Array</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="index.html#reversenum" class="tsd-kind-icon">reverse<wbr>Num</a></li>
@@ -157,6 +160,40 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 							<p>如果是非引用类型，直接返回该类型的值，引用类型则按类型返回</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="envinfo" class="tsd-anchor"></a>
+					<h3>env<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">env<wbr>Info<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:114</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description</dt>
+									<dd><p>移动端-判断是否当前多平台</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>平台名称支持：[&#39;wx&#39;,&#39;lark&#39;,&#39;h5&#39;,&#39;dd&#39;]</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>ture:当前环境为传入的平台其中一个</p>
 						</li>
 					</ul>
 				</section>
@@ -336,6 +373,74 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="isthirdpc" class="tsd-anchor"></a>
+					<h3>is<wbr>ThirdPC</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>ThirdPC<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:121</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description</dt>
+									<dd><p>是否多平台pc端</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>平台名称支持：[&#39;wx&#39;,&#39;lark&#39;,&#39;h5&#39;,&#39;dd&#39;]</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>ture:当前环境为传入的平台其中一个</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="iswximg" class="tsd-anchor"></a>
+					<h3>is<wbr>WxImg</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>WxImg<span class="tsd-signature-symbol">(</span>img<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:107</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description</dt>
+									<dd><p>是否企微图片</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>img: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>图片数据</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>图片地址</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="json" class="tsd-anchor"></a>
 					<h3>json</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -510,6 +615,9 @@
 								<a href="index.html#deepclone" class="tsd-kind-icon">deep<wbr>Clone</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="index.html#envinfo" class="tsd-kind-icon">env<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="index.html#getbytelen" class="tsd-kind-icon">get<wbr>Byte<wbr>Len</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
@@ -526,6 +634,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="index.html#isouterlinkenv" class="tsd-kind-icon">is<wbr>Outer<wbr>Link<wbr>Env</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="index.html#isthirdpc" class="tsd-kind-icon">is<wbr>ThirdPC</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="index.html#iswximg" class="tsd-kind-icon">is<wbr>WxImg</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="index.html#json" class="tsd-kind-icon">json</a>
@@ -560,9 +674,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="verify.html" class="tsd-kind-icon">Verify</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#formatdate" class="tsd-kind-icon">format<wbr>Date</a>
 					</li>
 				</ul>
 			</nav>
