@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-17 16:41:38
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-10 17:26:42
+ * @LastEditTime: 2021-09-14 16:02:13
  * @Description:
  * @Props:
  * @Emit:
@@ -14,6 +14,34 @@ Object.defineProperty(window, 'location', {
     hostname: '192.168.1.1',
     href: '123',
   },
+})
+
+// Storage Mock
+function storageMock() {
+  const storage = {}
+
+  return {
+    setItem: function (key, value) {
+      storage[key] = value || ''
+    },
+    getItem: function (key) {
+      return key in storage ? storage[key] : null
+    },
+    removeItem: function (key) {
+      delete storage[key]
+    },
+    get length() {
+      return Object.keys(storage).length
+    },
+    key: function (i) {
+      const keys = Object.keys(storage)
+      return keys[i] || null
+    },
+  }
+}
+Object.defineProperty(window, 'localStorage', {
+  writable: true,
+  value: storageMock(),
 })
 
 describe('Index test', () => {
@@ -181,12 +209,20 @@ describe('Index test', () => {
     // @ts-ignore
     window.navigator.userAgent =
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) wxwork Chrome/93.0.4577.63 Safari/537.36'
-    expect(utils.isThirdPC(['wx'])).toBeTruthy()
+    expect(utils.isThirdPC(['wx'], false)).toBeTruthy()
     // @ts-ignore
     window.navigator.userAgent =
       'Mozilla/5.0 (WindowsWechat; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wxwork/3.1.12 (MicroMessenger/6.2) WeChat/2.0.4'
-    expect(utils.isThirdPC(['wx'])).toBeTruthy()
-    expect(utils.isThirdPC(['lark'])).toBeFalsy()
+    expect(utils.isThirdPC(['wx'], false)).toBeTruthy()
+    // @ts-ignore
+    window.localStorage.setItem('env', 'lark')
+    // @ts-ignore
+    window.navigator.userAgent = ''
+    expect(utils.isThirdPC(['lark'], true)).toBeTruthy()
+    // @ts-ignore
+    window.localStorage.setItem('env', 'wx')
+    expect(utils.isThirdPC(['wx'], false)).toBeFalsy()
+    expect(utils.isThirdPC(['wx'], true)).toBeTruthy()
   })
 
   test('是否企微图片', () => {
