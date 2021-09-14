@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-07-05 16:39:01
+ * @LastEditTime: 2021-09-14 15:53:43
  * @Description:
  */
 /**
@@ -61,10 +61,11 @@ function formatNumber(num1: number | string, num2: number | string): FormatObj {
  * 优化过的toFixed方法
  */
 function toFixed(num: number | string, n: number = MAX_PRECISION): number | string {
+  const realNum: string = toNonExponential(num)
   const float: string = toNonExponential(num).toString().split('.')[1]
   const len: number = (float && float.length) || 0
   if (n >= len) {
-    return num
+    return +realNum
   } else {
     num = +num
     const adjust: number = num >= 0 ? 0.5 : -0.5
