@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-16 15:09:35
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-10 16:53:12
+ * @LastEditTime: 2021-09-14 10:39:29
  * @Description:
  * @Props:
  * @Emit:
@@ -212,11 +212,13 @@ export function envInfo(name: string[]): boolean {
  * @ignore
  * @description 判断是否第三方pc端
  */
-export function isThirdPC(name: string[]): boolean {
+export function isThirdPC(name: string[], inBrowser: boolean): boolean {
   const navigator: string = window.navigator.userAgent
   // 企微windows容器 不一样
   const winPC = name.indexOf('wx') > -1 ? 'WindowsWechat' : 'Windows'
   const regStr = `${winPC}|Macintosh`
   const reg = new RegExp(regStr)
-  return envInfo(name) && reg.test(navigator)
+  const env: string = window.localStorage.getItem('env') || ''
+  // 兼容在外部浏览器的第三方判断
+  return (envInfo(name) && reg.test(navigator)) || (inBrowser && name.indexOf(env) > -1)
 }
