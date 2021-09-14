@@ -73,4 +73,4 @@ export declare function envInfo(name: string[]): boolean;
  * @ignore
  * @description 判断是否第三方pc端
  */
-export declare function isThirdPC(name: string[]): boolean;
+export declare function isThirdPC(name: string[], inBrowser: boolean): boolean;
