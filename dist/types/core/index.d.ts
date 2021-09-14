@@ -56,6 +56,7 @@ export declare function isOuterLinkEnv(): boolean;
 export declare function browser(): string;
 /**
  * @ignore
+<<<<<<< HEAD
  * @description 是否企微图片
  */
 export declare function isWxImg(img: string): string;
@@ -74,3 +75,8 @@ export declare function envInfo(name: string[]): boolean;
  * @description 判断是否第三方pc端
  */
 export declare function isThirdPC(name: string[]): boolean;
+=======
+ * @description 获取图片地址
+ */
+export declare function thumbnail(img: string | string[], size?: number): string;
+>>>>>>> feature/lodash
