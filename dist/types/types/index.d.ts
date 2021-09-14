@@ -79,7 +79,6 @@ interface Index {
      * @return {string} 图片地址
      */
     thumbnail(img: string | string[], size?: number): string;
-<<<<<<< HEAD
     /**
      * @description  是否企微图片
      * @param {string} img 图片数据
@@ -98,8 +97,6 @@ interface Index {
      * @return {boolean} ture:当前环境为传入的平台其中一个
      */
     isThirdPC(name: string[]): boolean;
-=======
->>>>>>> feature/lodash
 }
 interface Verify {
     /**
@@ -492,15 +489,12 @@ interface Datefromat {
      * @return {string|number}
      */
     timeToTimestamp(time: string): string | number;
-<<<<<<< HEAD
     /**
      * 将秒数转为HH:MM:SS格式
      * @param {number} s :秒数，不是毫秒
      * @return {string}
      */
     formatSecond(s: number): string;
-=======
->>>>>>> feature/lodash
 }
 interface Method {
     /**
@@ -636,8 +630,6 @@ interface Math {
      */
     dealNumber(num: number | string): number | string;
 }
-<<<<<<< HEAD
-=======
 interface LodashTool {
     /**
      * @description get方法，用于解决a.b.c.d出现undefined导致代码保存不继续向下执行
@@ -730,7 +722,6 @@ interface LodashTool {
      */
     _trim(str: string, chars?: string): string;
 }
->>>>>>> feature/lodash
 interface Uuid {
     /**
      * @description 生成唯一码uuid
@@ -748,10 +739,6 @@ interface Uuid {
  * @ignore
  *
  */
-<<<<<<< HEAD
-export interface Types extends Index, Verify, Format, Is, Datefromat, Method, Url, Math, Uuid {
-=======
 export interface Types extends Index, Verify, Format, Is, Datefromat, Method, Url, Math, Uuid, LodashTool {
->>>>>>> feature/lodash
 }
 export {};

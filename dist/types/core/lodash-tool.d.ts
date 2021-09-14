@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-declare const _default: {};
-/**
- * @ignore
- */
-export default _default;
-=======
 import _get from 'lodash/get';
 import _map from 'lodash/map';
 import _uniq from 'lodash/uniq';
@@ -16,4 +9,3 @@ import _findIndex from 'lodash/findIndex';
 import _findLastIndex from 'lodash/findLastIndex';
 import _trim from 'lodash/trim';
 export { _get, _map, _property, _findIndex, _findLastIndex, _uniq, _pick, _omit, _isNaN, _trim };
->>>>>>> feature/lodash

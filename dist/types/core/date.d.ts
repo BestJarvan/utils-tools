@@ -41,14 +41,11 @@ export declare function formatEffectiveDate(date?: any): Date;
  * @description 转化时间格式
  */
 declare type dateType = Date | string | number;
-<<<<<<< HEAD
 /**
  *
  * @ignore
  * @description 转化时间格式
  */
-=======
->>>>>>> feature/lodash
 export declare function formatDate(d: dateType, type?: string): string;
 /**
  * @ignore
@@ -85,12 +82,9 @@ export declare function timestampToTimeString(timestamp: string | number, type: 
  * @description 将日期转换为时间戳的格式
  */
 export declare function timeToTimestamp(time: string): string | number;
-<<<<<<< HEAD
 /**
  * @ignore
  * @description 将秒数转为HH:MM:SS格式
  */
 export declare function formatSecond(s: number): string;
-=======
->>>>>>> feature/lodash
 export {};
