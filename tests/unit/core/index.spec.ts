@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-17 16:41:38
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-14 10:51:34
+ * @LastEditTime: 2021-09-14 16:02:13
  * @Description:
  * @Props:
  * @Emit:
@@ -218,7 +218,8 @@ describe('Index test', () => {
     window.localStorage.setItem('env', 'lark')
     // @ts-ignore
     window.navigator.userAgent = ''
-    expect(utils.isThirdPC(['lark'], true)).toBeTruthy() // @ts-ignore
+    expect(utils.isThirdPC(['lark'], true)).toBeTruthy()
+    // @ts-ignore
     window.localStorage.setItem('env', 'wx')
     expect(utils.isThirdPC(['wx'], false)).toBeFalsy()
     expect(utils.isThirdPC(['wx'], true)).toBeTruthy()
