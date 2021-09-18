@@ -178,12 +178,15 @@ export function isWxImg(img: string): string {
   if (/rescdn.qqmail.com|wx.qlogo.cn/.test(img)) return img
   return ''
 }
-
+type PrivateDeployInfo = {
+  oss: number
+  sms: number
+}
 /**
  * @ignore
  * @description 获取图片地址
  */
-export function thumbnail(img: string | string[], size?: number): string {
+export function thumbnail(img: string | string[], size?: number, oss?: number): string {
   let imgUrl: any = isArray(img) && img[0] ? img[0] : img
   // 判断imgURL格式
   if (!imgUrl || typeof imgUrl !== 'string') return ''
@@ -192,11 +195,33 @@ export function thumbnail(img: string | string[], size?: number): string {
   if (wxImg) return wxImg
   // 兼容老数据
   imgUrl = imgUrl.replace(/\?\d+$/, '')
-  // 判断size是否有效
-  if (!size || ![40, 50, 80, 100, 150, 200, 250].includes(size)) {
-    size = 100
+  // 处理 OSS 信息，优先从入参处取，如果入参没有从 LS 里读
+  const privateDeployInfo: PrivateDeployInfo = JSON.parse(
+    localStorage.getItem('privateDeployInfo') || ''
+  ) || { oss: 1, sms: 1 }
+  const ossType = oss || privateDeployInfo.oss
+  // ossType: 1阿里 2minio 3七牛
+  switch (ossType) {
+    case 1:
+    case 3:
+      // 阿里 oss 和七牛
+      // 判断imgURL格式
+      if (!imgUrl || typeof imgUrl !== 'string') {
+        return ''
+      } else {
+        imgUrl = imgUrl.replace(/\?\d+$/, '') // 兼容老数据
+      }
+      // 判断size是否有效
+      if (!size || ![40, 50, 80, 100, 150, 200, 250].includes(size)) {
+        size = 100
+      }
+      return `${imgUrl}_${size * 2}x${size * 2}.jpg`
+    case 2:
+      // minio
+      return imgUrl
+    default:
+      return `${imgUrl}_${size}x${size}.jpg`
   }
-  return `${imgUrl}_${size}x${size}.jpg`
 }
 
 /**
