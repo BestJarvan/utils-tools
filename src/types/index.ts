@@ -95,9 +95,10 @@ interface Index {
    * @description  获取图片地址
    * @param {string|string[]} img 图片数据
    * @param {number} size 可选参数 图片大小
+   * @param {number} oss 可选参数 oss类型 1阿里 2minio 3七牛
    * @return {string} 图片地址
    */
-  thumbnail(img: string | string[], size?: number): string
+  thumbnail(img: string | string[], size?: number, oss?: number): string
 
   /**
    * @description  是否企微图片

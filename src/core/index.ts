@@ -196,9 +196,8 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
   // 兼容老数据
   imgUrl = imgUrl.replace(/\?\d+$/, '')
   // 处理 OSS 信息，优先从入参处取，如果入参没有从 LS 里读
-  const privateDeployInfo: PrivateDeployInfo = JSON.parse(
-    localStorage.getItem('privateDeployInfo') || ''
-  ) || { oss: 1, sms: 1 }
+  const privateDeployObj = localStorage.getItem('privateDeployInfo')
+  const privateDeployInfo: PrivateDeployInfo = JSON.parse(privateDeployObj || '{"oss":1,"sms":1}')
   const ossType = oss || privateDeployInfo.oss
   // ossType: 1阿里 2minio 3七牛
   switch (ossType) {
@@ -215,7 +214,7 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
       if (!size || ![40, 50, 80, 100, 150, 200, 250].includes(size)) {
         size = 100
       }
-      return `${imgUrl}_${size * 2}x${size * 2}.jpg`
+      return `${imgUrl}_${size}x${size}.jpg`
     case 2:
       // minio
       return imgUrl
