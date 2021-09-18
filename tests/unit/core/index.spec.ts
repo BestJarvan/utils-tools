@@ -157,9 +157,12 @@ describe('Index test', () => {
   })
   test('获取图片地址', () => {
     expect(utils.thumbnail('', 40)).toBe('')
-    expect(utils.thumbnail('aaa?1123131', 90)).toBe('aaa_100x100.jpg')
+    expect(utils.thumbnail('aaa?1123131', 90, 1)).toBe('aaa_100x100.jpg')
+    expect(utils.thumbnail(['aaa?1123131'], 80, 1)).toBe('aaa_80x80.jpg')
+    expect(utils.thumbnail(['aaa?1123131'], 80, 2)).toBe('aaa')
+    // @ts-ignore
+    window.localStorage.setItem('privateDeployInfo', '{"oss":3,"sms":1}')
     expect(utils.thumbnail(['aaa?1123131'], 80)).toBe('aaa_80x80.jpg')
-    expect(utils.thumbnail(['aaa?1123131'])).toBe('aaa_100x100.jpg')
     expect(
       utils.thumbnail(
         'https://wework.qpic.cn/bizmail/nfSKvz2M9u2KzuCZG068h5mT4h8iaeia0RbT8IslibwwGjOoWj0XhQrsg/0',

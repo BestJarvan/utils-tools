@@ -1,8 +1,8 @@
 /*
  * @Author: 崔佳华
  * @Date: 2021-03-16 15:09:35
- * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-14 10:39:29
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2021-09-18 16:02:11
  * @Description:
  * @Props:
  * @Emit:
@@ -103,14 +103,10 @@ export function getParamValues(name: number, arr: Array<any[]>): Array<any> {
  */
 export function reverseNum(num: number | string): number | void {
   const newNum = Number(num)
-  try {
-    if (isNaN(newNum)) {
-      throw new Error('input is not a Number!')
-    } else {
-      return Math.abs(newNum - 1)
-    }
-  } catch (e) {
-    console.log(e)
+  if (isNaN(newNum)) {
+    return
+  } else {
+    return Math.abs(newNum - 1)
   }
 }
 /**
@@ -178,12 +174,15 @@ export function isWxImg(img: string): string {
   if (/rescdn.qqmail.com|wx.qlogo.cn/.test(img)) return img
   return ''
 }
-
+type PrivateDeployInfo = {
+  oss: number
+  sms: number
+}
 /**
  * @ignore
  * @description 获取图片地址
  */
-export function thumbnail(img: string | string[], size?: number): string {
+export function thumbnail(img: string | string[], size?: number, oss?: number): string {
   let imgUrl: any = isArray(img) && img[0] ? img[0] : img
   // 判断imgURL格式
   if (!imgUrl || typeof imgUrl !== 'string') return ''
@@ -192,11 +191,25 @@ export function thumbnail(img: string | string[], size?: number): string {
   if (wxImg) return wxImg
   // 兼容老数据
   imgUrl = imgUrl.replace(/\?\d+$/, '')
-  // 判断size是否有效
-  if (!size || ![40, 50, 80, 100, 150, 200, 250].includes(size)) {
-    size = 100
+  // 处理 OSS 信息，优先从入参处取，如果入参没有从 LS 里读
+  const privateDeployObj = window.localStorage.getItem('privateDeployInfo') || '{"oss":1,"sms":1}'
+  const privateDeployInfo: PrivateDeployInfo = JSON.parse(privateDeployObj)
+  const ossType: number = oss || privateDeployInfo.oss
+  // ossType: 1阿里 2minio 3七牛
+  switch (ossType) {
+    case 2:
+      // minio
+      return imgUrl
+    case 1:
+    case 3:
+    default:
+      // 阿里 oss 和七牛
+      // 判断size是否有效
+      if (!size || ![40, 50, 80, 100, 150, 200, 250].includes(size)) {
+        size = 100
+      }
+      return `${imgUrl}_${size}x${size}.jpg`
   }
-  return `${imgUrl}_${size}x${size}.jpg`
 }
 
 /**
