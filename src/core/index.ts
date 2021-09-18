@@ -196,29 +196,22 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
   // 兼容老数据
   imgUrl = imgUrl.replace(/\?\d+$/, '')
   // 处理 OSS 信息，优先从入参处取，如果入参没有从 LS 里读
-  const privateDeployObj = localStorage.getItem('privateDeployInfo')
-  const privateDeployInfo: PrivateDeployInfo = JSON.parse(privateDeployObj || '{"oss":1,"sms":1}')
-  const ossType = oss || privateDeployInfo.oss
+  const privateDeployObj = window.localStorage.getItem('privateDeployInfo') || '{"oss":1,"sms":1}'
+  const privateDeployInfo: PrivateDeployInfo = JSON.parse(privateDeployObj)
+  const ossType: number = oss || privateDeployInfo.oss
   // ossType: 1阿里 2minio 3七牛
   switch (ossType) {
+    case 2:
+      // minio
+      return imgUrl
     case 1:
     case 3:
+    default:
       // 阿里 oss 和七牛
-      // 判断imgURL格式
-      if (!imgUrl || typeof imgUrl !== 'string') {
-        return ''
-      } else {
-        imgUrl = imgUrl.replace(/\?\d+$/, '') // 兼容老数据
-      }
       // 判断size是否有效
       if (!size || ![40, 50, 80, 100, 150, 200, 250].includes(size)) {
         size = 100
       }
-      return `${imgUrl}_${size}x${size}.jpg`
-    case 2:
-      // minio
-      return imgUrl
-    default:
       return `${imgUrl}_${size}x${size}.jpg`
   }
 }
