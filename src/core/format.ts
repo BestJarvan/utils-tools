@@ -29,7 +29,7 @@ export function formatAddZero(value: number | string): string {
  *
  */
 export function dstMobile(mobile: string): string {
-  return mobile.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
+  return mobile.replace(/(\d{3})\d{4}(\d{0,4})/, '$1****$2')
 }
 
 /**
