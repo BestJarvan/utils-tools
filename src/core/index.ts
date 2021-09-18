@@ -1,8 +1,8 @@
 /*
  * @Author: 崔佳华
  * @Date: 2021-03-16 15:09:35
- * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-14 10:39:29
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2021-09-18 16:02:11
  * @Description:
  * @Props:
  * @Emit:
@@ -103,14 +103,10 @@ export function getParamValues(name: number, arr: Array<any[]>): Array<any> {
  */
 export function reverseNum(num: number | string): number | void {
   const newNum = Number(num)
-  try {
-    if (isNaN(newNum)) {
-      throw new Error('input is not a Number!')
-    } else {
-      return Math.abs(newNum - 1)
-    }
-  } catch (e) {
-    console.log(e)
+  if (isNaN(newNum)) {
+    return
+  } else {
+    return Math.abs(newNum - 1)
   }
 }
 /**
