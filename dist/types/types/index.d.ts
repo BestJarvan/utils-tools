@@ -716,11 +716,47 @@ interface LodashTool {
     /**
      * @description 去除字符串首尾空格方法
      * @returns 返回去除后的字符串
+     * @example
      * * var a = ' 123 '
      * * utils._Trim(a) = '123'
-     * @memberof LodashTool
      */
     _trim(str: string, chars?: string): string;
+    /**
+     * @description 检测是否是空对象
+     * @returns { boolean }
+     * @example
+     * utils._isEmpty(null) true
+     * utils._isEmpty([1, 2, 3]) true
+     * utils._isEmpty({ 'a': 1 }) false
+     *
+     */
+    _isEmpty(val: any): boolean;
+    /**
+     * @description 防抖
+     * @param { Function } [func] 需要执行的函数
+     * @param { Number } [delay] 需要延迟的毫秒数
+     * @param { Object } [options] 可选参数
+     * @param { Boolean } [options.leading] 指定调用在节流开始前
+     * @param { Number } [options.maxWait] 设置func允许被延迟的最大值
+     * @param { Boolean } [options.trailing] 指定调用在节流结束后
+     * @returns { Function }
+     * @example
+     * utils._debounce(calculateLayout, 150)
+     */
+    _debounce(func: Function, delay?: number, options?: object): Function;
+    /**
+     * @description 节流
+     * @param { Function } [func] 需要执行的函数
+     * @param { Number } [delay] 需要节流的毫秒数
+     * @param { Object } [options] 可选参数
+     * @param { Boolean } [options.leading] 指定调用在节流开始前
+     * @param { Boolean } [options.trailing] 指定调用在节流结束后
+     * @returns { Function }
+     * @example
+     * utils._throttle(() => {}, 100)
+     *
+     */
+    _throttle(func: Function, delay?: number, options?: object): Function;
 }
 interface Uuid {
     /**

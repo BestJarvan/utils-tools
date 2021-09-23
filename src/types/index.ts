@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-09-14 15:10:41
+ * @LastEditTime: 2021-09-23 15:35:49
  * @Description:
  */
 
@@ -751,7 +751,7 @@ interface LodashTool {
    * * var a =[1, 2, 1, 5, 1, 9]
    * * utils._uniq(a) => [1, 2, 5, 9]
    */
-   _uniq (array: Array<any>): Array<any>
+  _uniq (array: Array<any>): Array<any>
 
    /**
     * @description 创建一个从 object 中选中的 key 的对象。
@@ -759,7 +759,7 @@ interface LodashTool {
     * * var object = { 'a': 1, 'b': '2', 'c': 3 }
     * * utils._pick(object, ['a', 'c']) => { 'a': 1, 'c': 3 }
     */
-   _pick (object: object, props: string | string[]): object
+  _pick (object: object, props: string | string[]): object
  
    /**
     * @description 反向版 pick
@@ -767,7 +767,7 @@ interface LodashTool {
     * * var object = { 'a': 1, 'b': '2', 'c': 3 }
     * * utils._pick(object, ['a', 'c']) => { 'b': '2' }
     */
-   _omit (object: object, props: string | string[]): object
+  _omit (object: object, props: string | string[]): object
  
    /**
     * @description 判断是否为undefined
@@ -776,7 +776,7 @@ interface LodashTool {
     * * var a
     * * utils._isUndefined(a) => true
     */
-   _isUndefined (value: any): boolean
+  _isUndefined (value: any): boolean
  
    /**
     * @description 判断是否为NaN
@@ -785,15 +785,55 @@ interface LodashTool {
     * * var a = +'str'
     * * utils._isNaN(a) => true
     */
-   _isNaN (value: any): boolean
+  _isNaN (value: any): boolean
+
    /**
     * @description 去除字符串首尾空格方法
     * @returns 返回去除后的字符串
+    * @example
     * * var a = ' 123 '
     * * utils._Trim(a) = '123'
-    * @memberof LodashTool
     */
-   _trim (str: string, chars?: string): string
+  _trim (str: string, chars?: string): string
+
+  /**
+   * @description 检测是否是空对象
+   * @returns { boolean }
+   * @example
+   * utils._isEmpty(null) true
+   * utils._isEmpty([1, 2, 3]) true
+   * utils._isEmpty({ 'a': 1 }) false
+   * 
+   */
+  _isEmpty (val: any): boolean
+
+  /**
+   * @description 防抖
+   * @param { Function } [func] 需要执行的函数
+   * @param { Number } [delay] 需要延迟的毫秒数
+   * @param { Object } [options] 可选参数
+   * @param { Boolean } [options.leading] 指定调用在节流开始前
+   * @param { Number } [options.maxWait] 设置func允许被延迟的最大值
+   * @param { Boolean } [options.trailing] 指定调用在节流结束后
+   * @returns { Function }
+   * @example
+   * utils._debounce(calculateLayout, 150)
+   */
+  _debounce (func: Function, delay?: number, options?: object): Function
+
+  /**
+   * @description 节流
+   * @param { Function } [func] 需要执行的函数
+   * @param { Number } [delay] 需要节流的毫秒数
+   * @param { Object } [options] 可选参数
+   * @param { Boolean } [options.leading] 指定调用在节流开始前
+   * @param { Boolean } [options.trailing] 指定调用在节流结束后
+   * @returns { Function }
+   * @example
+   * utils._throttle(() => {}, 100)
+   * 
+   */
+  _throttle (func: Function, delay?: number, options?: object): Function
 }
 
 interface Uuid {

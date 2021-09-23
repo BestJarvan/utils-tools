@@ -81,13 +81,16 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_debounce" class="tsd-kind-icon">_debounce</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_findindex" class="tsd-kind-icon">_find<wbr>Index</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_findlastindex" class="tsd-kind-icon">_find<wbr>Last<wbr>Index</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_get" class="tsd-kind-icon">_get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_isempty" class="tsd-kind-icon">_is<wbr>Empty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_isnan" class="tsd-kind-icon">_is<wbr>NaN</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_isundefined" class="tsd-kind-icon">_is<wbr>Undefined</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_omit" class="tsd-kind-icon">_omit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_pick" class="tsd-kind-icon">_pick</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_throttle" class="tsd-kind-icon">_throttle</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_trim" class="tsd-kind-icon">_trim</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_uniq" class="tsd-kind-icon">_uniq</a></li>
 							</ul>
@@ -97,6 +100,45 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="_debounce" class="tsd-anchor"></a>
+					<h3>_debounce</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">_debounce<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, delay<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:822</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description</dt>
+									<dd><p>防抖</p>
+									</dd>
+									<dt>example</dt>
+									<dd><p>utils._debounce(calculateLayout, 150)</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>func: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> delay: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Function</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="_findindex" class="tsd-anchor"></a>
 					<h3>_find<wbr>Index</h3>
@@ -235,6 +277,41 @@
 utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">&#x27;a[0].b.c&#x27;</span>); <span class="hljs-comment">// =&gt; 3 （推荐使用）</span>
 utils._get(<span class="hljs-built_in">object</span>, [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;0&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>]); <span class="hljs-comment">// =&gt; 3</span>
 utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">&#x27;a.b.c&#x27;</span>, <span class="hljs-string">&#x27;default&#x27;</span>); <span class="hljs-comment">// =&gt; &#x27;default&#x27; （推荐使用）</span></code></pre>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="_isempty" class="tsd-anchor"></a>
+					<h3>_is<wbr>Empty</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">_is<wbr>Empty<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:808</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description</dt>
+									<dd><p>检测是否是空对象</p>
+									</dd>
+									<dt>example</dt>
+									<dd><p>utils._isEmpty(null) true
+											utils._isEmpty([1, 2, 3]) true
+										utils._isEmpty({ &#39;a&#39;: 1 }) false</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>val: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -391,6 +468,45 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="_throttle" class="tsd-anchor"></a>
+					<h3>_throttle</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">_throttle<span class="tsd-signature-symbol">(</span>func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, delay<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:836</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description</dt>
+									<dd><p>节流</p>
+									</dd>
+									<dt>example</dt>
+									<dd><p>utils._throttle(() =&gt; {}, 100)</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>func: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> delay: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Function</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="_trim" class="tsd-anchor"></a>
 					<h3>_trim</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -400,7 +516,7 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/types/index.ts:796</li>
+									<li>Defined in src/types/index.ts:797</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -408,8 +524,11 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 									<dt>description</dt>
 									<dd><p>去除字符串首尾空格方法</p>
 									</dd>
-									<dt>memberof</dt>
-									<dd><p>LodashTool</p>
+									<dt>example</dt>
+									<dd><ul>
+											<li>var a = &#39; 123 &#39;</li>
+											<li>utils._Trim(a) = &#39;123&#39;</li>
+										</ul>
 									</dd>
 								</dl>
 							</div>
@@ -424,10 +543,6 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p>返回去除后的字符串</p>
-							<ul>
-								<li>var a = &#39; 123 &#39;</li>
-								<li>utils._Trim(a) = &#39;123&#39;</li>
-							</ul>
 						</li>
 					</ul>
 				</section>
@@ -497,6 +612,9 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 						<a href="lodashtool.html" class="tsd-kind-icon">Lodash<wbr>Tool</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="lodashtool.html#_debounce" class="tsd-kind-icon">_debounce</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_findindex" class="tsd-kind-icon">_find<wbr>Index</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
@@ -504,6 +622,9 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_get" class="tsd-kind-icon">_get</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="lodashtool.html#_isempty" class="tsd-kind-icon">_is<wbr>Empty</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_isnan" class="tsd-kind-icon">_is<wbr>NaN</a>
@@ -516,6 +637,9 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_pick" class="tsd-kind-icon">_pick</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="lodashtool.html#_throttle" class="tsd-kind-icon">_throttle</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_trim" class="tsd-kind-icon">_trim</a>
