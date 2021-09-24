@@ -202,6 +202,7 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
       return imgUrl
     case 1:
     case 3:
+    case 4:
     default:
       // 阿里 oss 和七牛
       // 判断size是否有效
