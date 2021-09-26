@@ -198,11 +198,11 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
   // ossType: 1阿里 2minio 3七牛
   switch (ossType) {
     case 2:
+    case 4:
       // minio
       return imgUrl
     case 1:
     case 3:
-    case 4:
     default:
       // 阿里 oss 和七牛
       // 判断size是否有效
