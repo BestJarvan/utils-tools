@@ -1,6 +1,6 @@
 {
   "name": "@xbb/xbb-utils",
-  "version": "1.2.3",
+  "version": "1.2.0-beta.8",
   "description": "xbb内置工具包",
   "author": "蒋亚辉 <j532547613@gmail.com>",
   "scripts": {
@@ -16,13 +16,12 @@
   "files": [
     "dist"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^8.4.2",
     "@types/jest": "^25.2.1",
+    "@types/lodash": "^4.14.172",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -32,6 +31,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
+    "core-js": "^3.6.5",
     "del": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
@@ -53,6 +53,9 @@
     "tslint-config-standard": "^9.0.0",
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^8.4.2",
     "vue-template-compiler": "^2.6.11"
   },
   "husky": {

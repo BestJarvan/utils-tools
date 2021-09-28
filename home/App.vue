@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:09:27
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-07-02 14:39:14
+ * @LastEditTime: 2021-08-19 17:17:35
  * @Description: 
 -->
 <template>
@@ -29,6 +29,7 @@ export default class App extends Vue {
       writable:false,   
       value: 2
     })
+    console.log(utils._get({a: {b: {c: 1}}}, 'a.b.c', 333))
     console.log(utils.deepClone(obj111), 'deepClone === ')
     const result: Array<Array<number>> =  [[0,1,2],[1,2,3]]
     console.log(utils.getParamValues(1,result))
