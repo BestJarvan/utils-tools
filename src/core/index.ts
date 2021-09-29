@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-16 15:09:35
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-09-18 16:02:11
+ * @LastEditTime: 2021-09-29 09:33:59
  * @Description:
  * @Props:
  * @Emit:
@@ -174,6 +174,9 @@ export function isWxImg(img: string): string {
   if (/rescdn.qqmail.com|wx.qlogo.cn/.test(img)) return img
   return ''
 }
+/**
+ * @ignore
+ */
 type PrivateDeployInfo = {
   oss: number
   sms: number
