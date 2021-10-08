@@ -1,8 +1,8 @@
 /*
  * @Author: 崔佳华
  * @Date: 2021-03-16 15:09:35
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-09-29 09:33:59
+ * @LastEditors: zihao.chen
+ * @LastEditTime: 2021-10-08 15:14:51
  * @Description:
  * @Props:
  * @Emit:
@@ -232,7 +232,7 @@ export function envInfo(name: string[]): boolean {
 export function isThirdPC(name: string[], inBrowser: boolean): boolean {
   const navigator: string = window.navigator.userAgent
   // 企微windows容器 不一样
-  const winPC = name.indexOf('wx') > -1 ? 'WindowsWechat' : 'Windows'
+  const winPC = navigator.indexOf('wxwork') > -1 ? 'WindowsWechat' : 'Windows'
   const regStr = `${winPC}|Macintosh`
   const reg = new RegExp(regStr)
   const env: string = window.localStorage.getItem('env') || ''
