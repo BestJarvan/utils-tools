@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-09-28 14:34:19
+ * @LastEditTime: 2021-10-21 16:46:11
  * @Description:
  */
 
@@ -808,6 +808,18 @@ interface LodashTool {
    * 
    */
   _isEmpty (val: any): boolean
+
+  /**
+   * @description 对比两值是否相等
+   * @returns { boolean }
+   * @example
+   * const a = {a:1}
+   * const b = {a:1}
+   * utils._isEqual(a, b) // true
+   * a === b // false
+   * 
+   */
+  _isEqual (value: any, other: any): boolean
 
   /**
    * @description 防抖
