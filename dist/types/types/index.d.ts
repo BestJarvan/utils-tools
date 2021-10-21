@@ -734,6 +734,17 @@ interface LodashTool {
      */
     _isEmpty(val: any): boolean;
     /**
+     * @description 对比两值是否相等
+     * @returns { boolean }
+     * @example
+     * const a = {a:1}
+     * const b = {a:1}
+     * utils._isEqual(a, b) // true
+     * a === b // false
+     *
+     */
+    _isEqual(value: any, other: any): boolean;
+    /**
      * @description 防抖
      * @param { Function } [func] 需要执行的函数
      * @param { Number } [delay] 需要延迟的毫秒数
