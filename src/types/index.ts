@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-09-28 14:34:19
+ * @LastEditors: weimin.wei
+ * @LastEditTime: 2021-10-22 15:53:59
  * @Description:
  */
 
@@ -556,45 +556,77 @@ interface Datefromat {
 interface Method {
   /**
    *
-   * 节流函数
-   * @param fn 需要节流的方法
-   * @param delay 可选参数 下次运行时间间隔 单位毫秒ms 默认300
-   * @author Jarvan
+   * @description 节流装饰器
+   * @param { Number } [delay] 需要节流的毫秒数
+   * @param { Object } [options] 可选参数
+   * @param { Boolean } [options.leading] 指定调用在节流开始前，默认为 true
+   * @param { Boolean } [options.trailing] 指定调用在节流结束后，默认为 false
+   * @returns { Function }
+   * @example
    * ```typescript
-   * window.onscroll = utils.throttle(() => {
-   *   console.log(123)
-   * }, 1000)
-   *
+   * @utils.throttle(800) // 在需要节流的方法上添加装饰器进行包装
    * inputEnter(e) {
-   *   utils.throttle(() => {
    *     console.log(e)
-   *   }, 800)() // 返回的是一个函数所以需要自调
    * }
    * ```
-   *
    */
-  throttle(fn: Function, delay?: number): Function
+  throttleWrap(delay?: number, option?: object): Function
 
   /**
    *
-   * 防抖函数
-   * @param fn 需要防抖的方法
-   * @param delay 可选参数 停顿多久执行 单位毫秒ms 默认300
-   * @author Jarvan
+   * @description 节流函数
+   * @param { Function } [fn] 需要节流的函数
+   * @param { Number } [delay] 需要节流的毫秒数
+   * @param { Object } [options] 可选参数
+   * @param { Boolean } [options.leading] 指定调用在节流开始前，默认为 true
+   * @param { Boolean } [options.trailing] 指定调用在节流结束后，默认为 false
+   * @returns { Function }
+   * @example
    * ```typescript
-   * window.onscroll = utils.debounce(() => {
-   *   console.log(123)
-   * }, 1000)
+   * const func = () => { doSomething() }
+   * const funcThrottle = utils.throttle(func)
+   * ```
+   */
+  throttle(fn: Function, delay?: number, option?: object): Function
+
+  /**
    *
+   * @description 防抖装饰器
+   * @param { Number } [delay] 需要延迟的毫秒数
+   * @param { Object } [options] 可选参数
+   * @param { Boolean } [options.leading] 指定调用在防抖开始前，默认为 false
+   * @param { Number } [options.maxWait] 设置func允许被延迟的最大值
+   * @param { Boolean } [options.trailing] 指定调用在防抖结束后，默认为 true
+   * @returns { Function }
+   * @example
+   * ```typescript
+   * @utils.decorator(800) // 在需要防抖的方法上添加装饰器进行包装
    * inputEnter(e) {
-   *   utils.debounce(() => {
    *     console.log(e)
-   *   }, 800)() // 返回的是一个函数所以需要自调
    * }
    * ```
    *
    */
-  debounce(fn: Function, delay?: number): Function
+  debounceWrap(delay?: number, option?: object): Function
+
+  /**
+   *
+   * @description 防抖装饰器
+   * @param { Function } [fn] 需要防抖的函数
+   * @param { Number } [delay] 需要延迟的毫秒数
+   * @param { Object } [options] 可选参数
+   * @param { Boolean } [options.leading] 指定调用在防抖开始前，默认为 false
+   * @param { Number } [options.maxWait] 设置func允许被延迟的最大值
+   * @param { Boolean } [options.trailing] 指定调用在防抖结束后，默认为 true
+   * @returns { Function }
+   * @example
+   * ```typescript
+   * const func = () => { doSomething() }
+   * const funcThrottle = utils.debounce(func)
+   * ```
+   *
+   */
+  debounce(fn: Function, delay?: number, option?: object): Function
 }
 interface Url {
   /**
@@ -728,8 +760,8 @@ interface LodashTool {
    * * utils._findIndex(array, ['active', false]) => 0 （推荐使用）
    * * utils._findIndex(array, 'active') => 2 （推荐使用）
    */
-  _findIndex (array: Array<any>, predicate: any, fromIndex?: number): number
- 
+  _findIndex(array: Array<any>, predicate: any, fromIndex?: number): number
+
   /**
    * @description 该方法类似find，区别是该方法返回第一个通过 predicate 判断为真值的元素的索引值（index），而不是元素本身。
    * @param {Array} [array] 目标对象
@@ -745,7 +777,11 @@ interface LodashTool {
    * * utils._findLastIndex(array, ['active', false]) => 2 （推荐使用）
    * * utils._findLastIndex(array, 'active') => 0 （推荐使用）
    */
-  _findLastIndex (array: Array<any>, predicate: Array<any>|Function|object|string, fromIndex?: number): number
+  _findLastIndex(
+    array: Array<any>,
+    predicate: Array<any> | Function | object | string,
+    fromIndex?: number
+  ): number
 
   /**
    * @description 数组去重（纯数组）
@@ -753,50 +789,50 @@ interface LodashTool {
    * * var a =[1, 2, 1, 5, 1, 9]
    * * utils._uniq(a) => [1, 2, 5, 9]
    */
-  _uniq (array: Array<any>): Array<any>
+  _uniq(array: Array<any>): Array<any>
 
-   /**
-    * @description 创建一个从 object 中选中的 key 的对象。
-    * @example
-    * * var object = { 'a': 1, 'b': '2', 'c': 3 }
-    * * utils._pick(object, ['a', 'c']) => { 'a': 1, 'c': 3 }
-    */
-  _pick (object: object, props: string | string[]): object
- 
-   /**
-    * @description 反向版 pick
-    * @example
-    * * var object = { 'a': 1, 'b': '2', 'c': 3 }
-    * * utils._pick(object, ['a', 'c']) => { 'b': '2' }
-    */
-  _omit (object: object, props: string | string[]): object
- 
-   /**
-    * @description 判断是否为undefined
-    * @returns 返回布尔值
-    * @example
-    * * var a
-    * * utils._isUndefined(a) => true
-    */
-  _isUndefined (value: any): boolean
- 
-   /**
-    * @description 判断是否为NaN
-    * @returns 返回布尔值
-    * @example
-    * * var a = +'str'
-    * * utils._isNaN(a) => true
-    */
-  _isNaN (value: any): boolean
+  /**
+   * @description 创建一个从 object 中选中的 key 的对象。
+   * @example
+   * * var object = { 'a': 1, 'b': '2', 'c': 3 }
+   * * utils._pick(object, ['a', 'c']) => { 'a': 1, 'c': 3 }
+   */
+  _pick(object: object, props: string | string[]): object
 
-   /**
-    * @description 去除字符串首尾空格方法
-    * @returns 返回去除后的字符串
-    * @example
-    * * var a = ' 123 '
-    * * utils._Trim(a) = '123'
-    */
-  _trim (str: string, chars?: string): string
+  /**
+   * @description 反向版 pick
+   * @example
+   * * var object = { 'a': 1, 'b': '2', 'c': 3 }
+   * * utils._pick(object, ['a', 'c']) => { 'b': '2' }
+   */
+  _omit(object: object, props: string | string[]): object
+
+  /**
+   * @description 判断是否为undefined
+   * @returns 返回布尔值
+   * @example
+   * * var a
+   * * utils._isUndefined(a) => true
+   */
+  _isUndefined(value: any): boolean
+
+  /**
+   * @description 判断是否为NaN
+   * @returns 返回布尔值
+   * @example
+   * * var a = +'str'
+   * * utils._isNaN(a) => true
+   */
+  _isNaN(value: any): boolean
+
+  /**
+   * @description 去除字符串首尾空格方法
+   * @returns 返回去除后的字符串
+   * @example
+   * * var a = ' 123 '
+   * * utils._Trim(a) = '123'
+   */
+  _trim(str: string, chars?: string): string
 
   /**
    * @description 检测是否是空对象
@@ -805,9 +841,9 @@ interface LodashTool {
    * utils._isEmpty(null) true
    * utils._isEmpty([1, 2, 3]) true
    * utils._isEmpty({ 'a': 1 }) false
-   * 
+   *
    */
-  _isEmpty (val: any): boolean
+  _isEmpty(val: any): boolean
 
   /**
    * @description 防抖
@@ -821,7 +857,7 @@ interface LodashTool {
    * @example
    * utils._debounce(calculateLayout, 150)
    */
-  _debounce (func: Function, delay?: number, options?: object): Function
+  _debounce(func: Function, delay?: number, options?: object): Function
 
   /**
    * @description 节流
@@ -833,9 +869,9 @@ interface LodashTool {
    * @returns { Function }
    * @example
    * utils._throttle(() => {}, 100)
-   * 
+   *
    */
-  _throttle (func: Function, delay?: number, options?: object): Function
+  _throttle(func: Function, delay?: number, options?: object): Function
 }
 
 interface Uuid {
@@ -856,4 +892,14 @@ interface Uuid {
  * @ignore
  *
  */
-export interface Types extends Index, Verify, Format, Is, Datefromat, Method, Url, Math, Uuid, LodashTool {}
+export interface Types
+  extends Index,
+    Verify,
+    Format,
+    Is,
+    Datefromat,
+    Method,
+    Url,
+    Math,
+    Uuid,
+    LodashTool {}
