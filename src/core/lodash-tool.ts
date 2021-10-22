@@ -2,7 +2,7 @@
  * @Author: Yahui.Jiang
  * @Date: 2021-03-17 15:04:11
  * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-09-23 15:23:23
+ * @LastEditTime: 2021-10-21 16:40:11
  * @Description: lodash工具方法 使用方法：utils._apiName()
  */
 import _get from 'lodash/get'
@@ -16,6 +16,7 @@ import _findIndex from 'lodash/findIndex'
 import _findLastIndex from 'lodash/findLastIndex'
 import _trim from 'lodash/trim'
 import _isEmpty from 'lodash/isEmpty'
+import _isEqual from 'lodash/isEqual'
 import _debounce from 'lodash/debounce'
 import _throttle from 'lodash/throttle'
 
@@ -31,6 +32,7 @@ export {
   _isNaN,
   _trim,
   _isEmpty,
+  _isEqual,
   _debounce,
-  _throttle
+  _throttle,
 }
