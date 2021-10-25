@@ -1,10 +1,12 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: weimin.wei
- * @LastEditTime: 2021-08-16 10:39:48
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2021-10-25 10:18:00
  * @Description:
  */
+import { _debounce, _throttle } from './lodash-tool'
+
 /**
  * @ignore
  * 方法类
@@ -12,33 +14,42 @@
 
 /**
  * @ignore
- * 节流函数
+ * 防抖函数
+ * 默认调用在防抖开始后
  */
-export function throttle(fn: Function, delay = 300): Function {
-  let execute = false
-  return function (...args): void {
-    if (execute) return
-    execute = true
-    setTimeout(() => {
-      // @ts-ignore
-      fn.apply(this, args)
-      execute = false
-    }, delay)
+export function debounce(fn: any, delay = 500, option = {}) {
+  return _debounce(fn, delay, option)
+}
+
+/**
+ * @ignore
+ * 防抖装饰器
+ * 默认调用在防抖开始后
+ */
+export function debounceWrap(delay = 500, option = {}) {
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    descriptor.value = _debounce(descriptor.value, delay, option)
+    return descriptor
   }
 }
 
 /**
  * @ignore
- * 防抖函数
+ * 节流函数
+ * 默认调用在节流开始前
  */
-export function debounce(fn: Function, delay = 300): Function {
-  let timer
-  return function (...args) {
-    timer && clearTimeout(timer)
-    timer = setTimeout(() => {
-      timer = null
-      // @ts-ignore
-      fn.apply(this, args)
-    }, delay)
+export function throttle(fn: any, delay = 500, option = {}) {
+  return _throttle(fn, delay, option)
+}
+
+/**
+ * @ignore
+ * 节流装饰器
+ * 默认调用在节流开始前
+ */
+export function throttleWrap(delay = 500, option = {}) {
+  return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    descriptor.value = _throttle(descriptor.value, delay, option)
+    return descriptor
   }
 }

@@ -34,5 +34,5 @@ export {
   _isEmpty,
   _isEqual,
   _debounce,
-  _throttle
+  _throttle,
 }
