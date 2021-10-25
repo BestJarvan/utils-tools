@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: weimin.wei
- * @LastEditTime: 2021-10-22 17:17:26
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2021-10-25 10:34:10
  * @Description:
  */
 
@@ -565,9 +565,7 @@ interface Method {
    * @example
    * ```typescript
    * @utils.throttle(800) // 在需要节流的方法上添加装饰器进行包装
-   * inputEnter(e) {
-   *     console.log(e)
-   * }
+   * inputEnter(e) {}
    * ```
    */
   throttleWrap(delay?: number, option?: object): Function
@@ -601,9 +599,7 @@ interface Method {
    * @example
    * ```typescript
    * @utils.decorator(800) // 在需要防抖的方法上添加装饰器进行包装
-   * inputEnter(e) {
-   *     console.log(e)
-   * }
+   * inputEnter(e) {}
    * ```
    *
    */

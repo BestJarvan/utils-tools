@@ -1,12 +1,11 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: weimin.wei
- * @LastEditTime: 2021-10-22 16:49:19
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2021-10-25 10:18:00
  * @Description:
  */
-import _debounce from 'lodash/debounce'
-import _throttle from 'lodash/throttle'
+import { _debounce, _throttle } from './lodash-tool'
 
 /**
  * @ignore
@@ -18,7 +17,7 @@ import _throttle from 'lodash/throttle'
  * 防抖函数
  * 默认调用在防抖开始后
  */
-export function debounce(fn: Function, delay = 500, option = {}) {
+export function debounce(fn: any, delay = 500, option = {}) {
   return _debounce(fn, delay, option)
 }
 
@@ -39,7 +38,7 @@ export function debounceWrap(delay = 500, option = {}) {
  * 节流函数
  * 默认调用在节流开始前
  */
-export function throttle(fn: Function, delay = 500, option = {}) {
+export function throttle(fn: any, delay = 500, option = {}) {
   return _throttle(fn, delay, option)
 }
 

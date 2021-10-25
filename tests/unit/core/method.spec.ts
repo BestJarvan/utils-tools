@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:27:51
- * @LastEditors: weimin.wei
- * @LastEditTime: 2021-10-22 17:05:52
+ * @LastEditors: Yahui.Jiang
+ * @LastEditTime: 2021-10-25 10:32:56
  * @Description:
  */
 import utils from '../../../src/index'
@@ -16,12 +16,12 @@ describe('Method test', () => {
       mockTFuncA = jest.fn()
       mockTFuncB = jest.fn()
       class TestT {
-        @utils.throttleWrap(500)
+        @utils.throttleWrap()
         fnA() {
           mockTFuncA()
           return 'hello world'
         }
-        @utils.throttleWrap(500)
+        @utils.throttleWrap(500, {})
         fnB() {
           mockTFuncB()
         }
@@ -79,7 +79,7 @@ describe('Method test', () => {
     beforeEach(() => {
       mockTFuncA = jest.fn(() => 'hello world')
       mockTFuncB = jest.fn()
-      throttleFuncA = utils.throttle(mockTFuncA)
+      throttleFuncA = utils.throttle(mockTFuncA, 300, {})
       throttleFuncB = utils.throttle(mockTFuncB)
     })
 
@@ -130,12 +130,12 @@ describe('Method test', () => {
       mockDFuncA = jest.fn()
       mockDFuncB = jest.fn()
       class TestD1 {
-        @utils.debounceWrap(500)
+        @utils.debounceWrap()
         fnA() {
           mockDFuncA()
           return 'hello world'
         }
-        @utils.debounceWrap(500)
+        @utils.debounceWrap(500, {})
         fnB() {
           mockDFuncB()
         }
@@ -195,7 +195,7 @@ describe('Method test', () => {
     beforeEach(() => {
       mockDFuncA = jest.fn(() => 'hello world')
       mockDFuncB = jest.fn()
-      debounceFuncA = utils.debounce(mockDFuncA)
+      debounceFuncA = utils.debounce(mockDFuncA, 300, {})
       debounceFuncB = utils.debounce(mockDFuncB)
     })
 
