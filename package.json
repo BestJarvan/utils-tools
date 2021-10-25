@@ -1,6 +1,6 @@
 {
   "name": "@xbb/xbb-utils",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "xbb内置工具包",
   "author": "蒋亚辉 <j532547613@gmail.com>",
   "scripts": {
