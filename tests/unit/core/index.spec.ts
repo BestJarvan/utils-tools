@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-17 16:41:38
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-14 16:02:13
+ * @LastEditTime: 2021-11-15 10:31:48
  * @Description:
  * @Props:
  * @Emit:
@@ -198,34 +198,37 @@ describe('Index test', () => {
     // @ts-ignore
     window.navigator.userAgent =
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) wxwork Chrome/93.0.4577.63 Safari/537.36'
-    expect(utils.envInfo(['wx', 'lark'])).toBeTruthy()
+    expect(utils.envInfo(['wx', 'lark'])).toBe('wx')
     // @ts-ignore
     window.navigator.userAgent =
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) DingTalk Chrome/93.0.4577.63 Safari/537.36'
-    expect(utils.envInfo(['dd'])).toBeTruthy()
+    expect(utils.envInfo(['dd'])).toBe('dd')
     // @ts-ignore
     window.navigator.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
-    expect(utils.envInfo(['123'])).toBeFalsy()
+    expect(utils.envInfo(['123'])).toBeUndefined()
   })
 
   test('判断是否第三方pc端', () => {
     // @ts-ignore
     window.navigator.userAgent =
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) wxwork Chrome/93.0.4577.63 Safari/537.36'
-    expect(utils.isThirdPC(['wx'], false)).toBeTruthy()
+    expect(utils.isThirdPC(['wx'], false)).toBe('wx')
     // @ts-ignore
     window.navigator.userAgent =
       'Mozilla/5.0 (WindowsWechat; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) wxwork/3.1.12 (MicroMessenger/6.2) WeChat/2.0.4'
-    expect(utils.isThirdPC(['wx'], false)).toBeTruthy()
+    expect(utils.isThirdPC(['wx'], false)).toBe('wx')
     // @ts-ignore
     window.localStorage.setItem('env', 'lark')
     // @ts-ignore
     window.navigator.userAgent = ''
-    expect(utils.isThirdPC(['lark'], true)).toBeTruthy()
+    expect(utils.isThirdPC(['lark'], true)).toBe('lark')
     // @ts-ignore
     window.localStorage.setItem('env', 'wx')
-    expect(utils.isThirdPC(['wx'], false)).toBeFalsy()
-    expect(utils.isThirdPC(['wx'], true)).toBeTruthy()
+    expect(utils.isThirdPC(['wx'], false)).toBeUndefined()
+    expect(utils.isThirdPC(['wx'], true)).toBe('wx')
+    expect(utils.isThirdPC(['lark'], true)).toBeUndefined()
+    window.localStorage.setItem('env', '')
+    expect(utils.isThirdPC(['lark'], true)).toBeUndefined()
   })
 
   test('是否企微图片', () => {

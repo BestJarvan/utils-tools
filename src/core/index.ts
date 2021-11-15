@@ -2,7 +2,7 @@
  * @Author: 崔佳华
  * @Date: 2021-03-16 15:09:35
  * @LastEditors: zihao.chen
- * @LastEditTime: 2021-10-08 15:14:51
+ * @LastEditTime: 2021-11-15 10:32:44
  * @Description:
  * @Props:
  * @Emit:
@@ -220,22 +220,29 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
  * @ignore
  * @description 移动端判断是否当前多平台环境
  */
-export function envInfo(name: string[]): boolean {
+export function envInfo(name: string[]): string | undefined {
   const navigator: string = window.navigator.userAgent
-  return name.some(item => navigator.indexOf(System[item]) > -1)
+  return name.find(item => navigator.indexOf(System[item]) > -1)
 }
 
 /**
  * @ignore
  * @description 判断是否第三方pc端
  */
-export function isThirdPC(name: string[], inBrowser: boolean): boolean {
+export function isThirdPC(name: string[], inBrowser: boolean): string | undefined {
+  let res: string | undefined
   const navigator: string = window.navigator.userAgent
   // 企微windows容器 不一样
   const winPC = navigator.indexOf('wxwork') > -1 ? 'WindowsWechat' : 'Windows'
   const regStr = `${winPC}|Macintosh`
   const reg = new RegExp(regStr)
   const env: string = window.localStorage.getItem('env') || ''
+  if (reg.test(navigator)) {
+    res = envInfo(name)
+  }
   // 兼容在外部浏览器的第三方判断
-  return (envInfo(name) && reg.test(navigator)) || (inBrowser && name.indexOf(env) > -1)
+  if (inBrowser && name.indexOf(env) > -1) {
+    res = env
+  }
+  return res
 }
