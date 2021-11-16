@@ -89,16 +89,16 @@ interface Index {
     /**
      * @description  移动端-判断是否当前多平台
      * @param {string[]} name 平台名称支持：['wx','lark','h5','dd']
-     * @return {boolean} ture:当前环境为传入的平台其中一个
+     * @return {string | undefined} 返回对应的平台名称 或 undefined
      */
-    envInfo(name: string[]): boolean;
+    envInfo(name: string[]): string | undefined;
     /**
      * @description  是否多平台pc端
      * @param {string[]} name 平台名称支持：['wx','lark','h5','dd']
      * @param {boolean} inBrowser 在浏览器中判断环境 false:仅仅走容器，true:容器和浏览器
-     * @return {boolean} ture:当前环境为传入的平台其中一个
+     * @return {string | undefined} 返回对应的平台名称 或 undefined
      */
-    isThirdPC(name: string[], inBrowser: boolean): boolean;
+    isThirdPC(name: string[], inBrowser: boolean): string | undefined;
 }
 interface Verify {
     /**

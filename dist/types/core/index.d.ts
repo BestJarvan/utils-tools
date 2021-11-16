@@ -68,9 +68,9 @@ export declare function thumbnail(img: string | string[], size?: number, oss?: n
  * @ignore
  * @description 移动端判断是否当前多平台环境
  */
-export declare function envInfo(name: string[]): boolean;
+export declare function envInfo(name: string[]): string | undefined;
 /**
  * @ignore
  * @description 判断是否第三方pc端
  */
-export declare function isThirdPC(name: string[], inBrowser: boolean): boolean;
+export declare function isThirdPC(name: string[], inBrowser: boolean): string | undefined;
