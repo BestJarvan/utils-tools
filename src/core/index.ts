@@ -198,6 +198,7 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
   const privateDeployObj = window.localStorage.getItem('privateDeployInfo') || '{"oss":1,"sms":1}'
   const privateDeployInfo: PrivateDeployInfo = JSON.parse(privateDeployObj)
   const ossType: number = oss || privateDeployInfo.oss
+  const allowHost = ['xbongbong.com', 'dingtalk.com', 'aliyuncs.com']
   // ossType: 1阿里 2minio 3七牛
   switch (ossType) {
     case 2:
@@ -208,6 +209,10 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
     case 3:
     default:
       // 阿里 oss 和七牛
+      // 进了这三种情况 还要判断下域名是否是我们的准入域名
+      if (!allowHost.find(n => imgUrl.indexOf(n) !== -1)) {
+        return imgUrl
+      }
       // 判断size是否有效
       if (!size || ![40, 50, 80, 100, 150, 200, 250].includes(size)) {
         size = 100
