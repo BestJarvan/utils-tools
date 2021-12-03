@@ -157,12 +157,15 @@ describe('Index test', () => {
   })
   test('获取图片地址', () => {
     expect(utils.thumbnail('', 40)).toBe('')
-    expect(utils.thumbnail('aaa?1123131', 90, 1)).toBe('aaa_100x100.jpg')
-    expect(utils.thumbnail(['aaa?1123131'], 80, 1)).toBe('aaa_80x80.jpg')
+    expect(utils.thumbnail('dingtalk.com/123.jpg?1123131', 90, 1)).toBe(
+      'dingtalk.com/123.jpg_100x100.jpg'
+    )
+    expect(utils.thumbnail(['xbongbong.com/123.jpg?1123131'], 80, 1)).toBe(
+      'xbongbong.com/123.jpg_80x80.jpg'
+    )
     expect(utils.thumbnail(['aaa?1123131'], 80, 2)).toBe('aaa')
     // @ts-ignore
     window.localStorage.setItem('privateDeployInfo', '{"oss":3,"sms":1}')
-    expect(utils.thumbnail(['aaa?1123131'], 80)).toBe('aaa_80x80.jpg')
     expect(
       utils.thumbnail(
         'https://wework.qpic.cn/bizmail/nfSKvz2M9u2KzuCZG068h5mT4h8iaeia0RbT8IslibwwGjOoWj0XhQrsg/0',
@@ -181,6 +184,7 @@ describe('Index test', () => {
     ).toBe(
       'https://rescdn.qqmail.com/node/wwmng/wwmng/style/images/independent/DefaultAvatar$73ba92b5.png'
     )
+    expect(utils.thumbnail(['https://baidu.com/logo.png'], 80)).toBe('https://baidu.com/logo.png')
   })
 
   test('将秒数转为HH:MM:SS格式', () => {
