@@ -130,3 +130,20 @@ export function formatParams(params: any): string {
 
   return str.length ? '?' + str.substr(1) : str
 }
+
+/**
+ * @return {object} 十六进制颜色转rgba
+ */
+export function hexToRgba(hex: string, opacity: number | string): string {
+  return (
+    'rgba(' +
+    parseInt('0x' + hex.slice(1, 3)) +
+    ',' +
+    parseInt('0x' + hex.slice(3, 5)) +
+    ',' +
+    parseInt('0x' + hex.slice(5, 7)) +
+    ',' +
+    opacity +
+    ')'
+  )
+}

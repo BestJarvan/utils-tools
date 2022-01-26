@@ -34,6 +34,10 @@ describe('Utils test', () => {
     test('Utils must have a formatParams function', () => {
       expect(typeof utils.formatParams).toBe('function')
     })
+
+    test('Utils must have a hexToRgba function', () => {
+      expect(typeof utils.hexToRgba).toBe('function')
+    })
   })
 
   // is模块
