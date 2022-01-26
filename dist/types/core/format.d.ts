@@ -47,3 +47,8 @@ export declare function parseParams(value: string): object;
  *
  */
 export declare function formatParams(params: any): string;
+/**
+ * @ignore
+ * @return {object} 十六进制颜色转rgba
+ */
+export declare function hexToRgba(hex: string, opacity?: number | string): string;

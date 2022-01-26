@@ -132,17 +132,18 @@ export function formatParams(params: any): string {
 }
 
 /**
+ * @ignore
  * @return {object} 十六进制颜色转rgba
  */
 export function hexToRgba(hex: string, opacity?: number | string): string {
   return (
     'rgba(' +
-    parseInt('0x' + hex.slice(1, 3)) +
-    ',' +
-    parseInt('0x' + hex.slice(3, 5)) +
-    ',' +
-    parseInt('0x' + hex.slice(5, 7)) +
-    ',' +
+    parseInt('0x' + hex.slice(1, 3), 16) +
+    ', ' +
+    parseInt('0x' + hex.slice(3, 5), 16) +
+    ', ' +
+    parseInt('0x' + hex.slice(5, 7), 16) +
+    ', ' +
     (opacity || 1) +
     ')'
   )

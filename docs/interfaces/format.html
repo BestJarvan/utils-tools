@@ -86,6 +86,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="format.html#formataddzero" class="tsd-kind-icon">format<wbr>Add<wbr>Zero</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="format.html#formatparams" class="tsd-kind-icon">format<wbr>Params</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="format.html#formatphone" class="tsd-kind-icon">format<wbr>Phone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="format.html#hextorgba" class="tsd-kind-icon">hex<wbr>ToRgba</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="format.html#parseparams" class="tsd-kind-icon">parse<wbr>Params</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="format.html#random" class="tsd-kind-icon">random</a></li>
 							</ul>
@@ -286,6 +287,50 @@ utils.formatAddZero(<span class="hljs-string">&#x27;12&#x27;</span>) <span class
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="hextorgba" class="tsd-anchor"></a>
+					<h3>hex<wbr>ToRgba</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">hex<wbr>ToRgba<span class="tsd-signature-symbol">(</span>hex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, opacity<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:297</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>十六进制颜色转rgba</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>author</dt>
+									<dd><p>Jarvan</p>
+										<pre><code class="language-typescript">utils.hexToRgba(<span class="hljs-string">&#x27;#00965e&#x27;</span>,<span class="hljs-string">&#x27;0.5&#x27;</span>) <span class="hljs-comment">// &#x27;rgba(0,150,94,0.5)&#x27;</span></code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hex: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>十六进制颜色</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opacity: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>透明度（默认为1）</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>rgba格式颜色</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="parseparams" class="tsd-anchor"></a>
 					<h3>parse<wbr>Params</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -400,6 +445,9 @@ utils.random(<span class="hljs-number">9</span>， <span class="hljs-number">7</
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="format.html#formatphone" class="tsd-kind-icon">format<wbr>Phone</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="format.html#hextorgba" class="tsd-kind-icon">hex<wbr>ToRgba</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="format.html#parseparams" class="tsd-kind-icon">parse<wbr>Params</a>
