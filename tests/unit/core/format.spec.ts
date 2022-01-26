@@ -66,5 +66,6 @@ describe('Format test', () => {
     expect(utils.hexToRgba('#00965e', '0.5')).toBe('rgba(0,150,94,0.5)')
     expect(utils.hexToRgba('#00965e', '1')).toBe('rgba(0,150,94,1)')
     expect(utils.hexToRgba('#3399ff', '1')).toBe('rgba(51,153,255,1)')
+    expect(utils.hexToRgba('#3399ff')).toBe('rgba(51,153,255,1)')
   })
 })

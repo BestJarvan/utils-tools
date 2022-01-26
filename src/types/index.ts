@@ -286,7 +286,7 @@ interface Format {
    *
    * 十六进制颜色转rgba
    * @param hex 十六进制颜色
-   * @param opacity 透明度
+   * @param opacity 透明度（默认为1）
    * @return {string} rgba格式颜色
    * @author Jarvan
    * ``` typescript
@@ -294,7 +294,7 @@ interface Format {
    * ```
    *
    */
-  hexToRgba(hex: string, opacity: number | string): string
+  hexToRgba(hex: string, opacity?: number | string): string
 }
 
 interface Is {
