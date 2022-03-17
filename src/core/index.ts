@@ -214,7 +214,7 @@ export function thumbnail(img: string | string[], size?: number, oss?: number): 
         return imgUrl
       }
       // 判断size是否有效
-      if (!size || ![40, 50, 80, 100, 150, 200, 250].includes(size)) {
+      if (!size || ![40, 50, 80, 100, 150, 200, 250, 1080].includes(size)) {
         size = 100
       }
       return `${imgUrl}_${size}x${size}.jpg`

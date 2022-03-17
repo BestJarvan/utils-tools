@@ -164,6 +164,7 @@ describe('Index test', () => {
       'xbongbong.com/123.jpg_80x80.jpg'
     )
     expect(utils.thumbnail(['aaa?1123131'], 80, 2)).toBe('aaa')
+    expect(utils.thumbnail(['aaa?1123131'], 1080, 2)).toBe('aaa')
     // @ts-ignore
     window.localStorage.setItem('privateDeployInfo', '{"oss":3,"sms":1}')
     expect(
