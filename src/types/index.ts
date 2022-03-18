@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2020-12-17 15:28:50
- * @LastEditors: zihao.chen
- * @LastEditTime: 2021-11-15 09:52:55
+ * @LastEditors: weimin.wei
+ * @LastEditTime: 2022-03-18 12:18:19
  * @Description:
  */
 
@@ -894,6 +894,29 @@ interface LodashTool {
    *
    */
   _throttle(func: Function, delay?: number, options?: object): Function
+  /**
+   * @description: 字符串前填充字符
+   * @param { String } [string] 需要被填充的字符
+   * @param { Number } [length] 填充后的长度
+   * @param { String } [chars] 填充的字符
+   * @return { String }
+   * @example
+   * utils._padStart('GFG', 5) // '  GFG'
+   * utils._padStart('1234', 6, 'a') // 'aa1234'
+   * utils._padStart('1234', 3, '#') // '1234'
+   */
+  _padStart(string?: string, length?: number, chars?: string): string
+  /**
+   * @description: 字符串后填充字符
+   * @param { String } [string] 需要被填充的字符
+   * @param { Number } [length] 填充后的长度
+   * @param { String } [chars] 填充的字符
+   * @return { String }
+   * utils._padEnd('GFG', 5) // 'GFG  '
+   * utils._padEnd('1234', 6, 'a') // '1234aa'
+   * utils._padEnd('1234', 3, '#') // '1234'
+   */
+  _padEnd(string?: string, length?: number, chars?: string): string
 }
 
 interface Uuid {
