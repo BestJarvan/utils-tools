@@ -12,4 +12,6 @@ import _isEmpty from 'lodash/isEmpty';
 import _isEqual from 'lodash/isEqual';
 import _debounce from 'lodash/debounce';
 import _throttle from 'lodash/throttle';
-export { _get, _map, _property, _findIndex, _findLastIndex, _uniq, _pick, _omit, _isNaN, _trim, _isEmpty, _isEqual, _debounce, _throttle, };
+import _padStart from 'lodash/padStart';
+import _padEnd from 'lodash/padEnd';
+export { _get, _map, _property, _findIndex, _findLastIndex, _uniq, _pick, _omit, _isNaN, _trim, _isEmpty, _isEqual, _debounce, _throttle, _padStart, _padEnd, };

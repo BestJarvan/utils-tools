@@ -120,6 +120,7 @@ v1.3.5    | envInfo，isThirdPC优化展示方法，返回当前环境
 v1.3.6    | thumbnail: 支持API 导入进来的图片不渲染缩略图
 v1.4.0    | hexToRgba: 新增16进制转rgba方法
 v1.4.1    | thumbnail: 新增1080
+v1.5.0    | thumbnail: 新增1080
 ----------|------------------------
 ```
 

@@ -90,6 +90,8 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_isnan" class="tsd-kind-icon">_is<wbr>NaN</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_isundefined" class="tsd-kind-icon">_is<wbr>Undefined</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_omit" class="tsd-kind-icon">_omit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_padend" class="tsd-kind-icon">_pad<wbr>End</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_padstart" class="tsd-kind-icon">_pad<wbr>Start</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_pick" class="tsd-kind-icon">_pick</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_throttle" class="tsd-kind-icon">_throttle</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="lodashtool.html#_trim" class="tsd-kind-icon">_trim</a></li>
@@ -469,6 +471,86 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="_padend" class="tsd-anchor"></a>
+					<h3>_pad<wbr>End</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">_pad<wbr>End<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, length<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, chars<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:919</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description:</dt>
+									<dd><p>字符串后填充字符</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> str: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> length: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> chars: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>utils._padEnd(&#39;GFG&#39;, 5) // &#39;GFG  &#39;
+								utils._padEnd(&#39;1234&#39;, 6, &#39;a&#39;) // &#39;1234aa&#39;
+							utils._padEnd(&#39;1234&#39;, 3, &#39;#&#39;) // &#39;1234&#39;</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="_padstart" class="tsd-anchor"></a>
+					<h3>_pad<wbr>Start</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">_pad<wbr>Start<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, length<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, chars<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/types/index.ts:908</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>description:</dt>
+									<dd><p>字符串前填充字符</p>
+									</dd>
+									<dt>example</dt>
+									<dd><p>utils._padStart(&#39;GFG&#39;, 5) // &#39;  GFG&#39;
+											utils._padStart(&#39;1234&#39;, 6, &#39;a&#39;) // &#39;aa1234&#39;
+										utils._padStart(&#39;1234&#39;, 3, &#39;#&#39;) // &#39;1234&#39;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> str: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> length: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> chars: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="_pick" class="tsd-anchor"></a>
 					<h3>_pick</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -677,6 +759,12 @@ utils._get(<span class="hljs-built_in">object</span>, <span class="hljs-string">
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_omit" class="tsd-kind-icon">_omit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="lodashtool.html#_padend" class="tsd-kind-icon">_pad<wbr>End</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="lodashtool.html#_padstart" class="tsd-kind-icon">_pad<wbr>Start</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="lodashtool.html#_pick" class="tsd-kind-icon">_pick</a>
