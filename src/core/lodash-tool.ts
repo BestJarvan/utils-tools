@@ -1,8 +1,8 @@
 /*
  * @Author: Yahui.Jiang
  * @Date: 2021-03-17 15:04:11
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-10-21 16:40:11
+ * @LastEditors: weimin.wei
+ * @LastEditTime: 2022-03-18 11:31:45
  * @Description: lodash工具方法 使用方法：utils._apiName()
  */
 import _get from 'lodash/get'
@@ -19,6 +19,8 @@ import _isEmpty from 'lodash/isEmpty'
 import _isEqual from 'lodash/isEqual'
 import _debounce from 'lodash/debounce'
 import _throttle from 'lodash/throttle'
+import _padStart from 'lodash/padStart'
+import _padEnd from 'lodash/padEnd'
 
 export {
   _get,
@@ -35,4 +37,6 @@ export {
   _isEqual,
   _debounce,
   _throttle,
+  _padStart,
+  _padEnd,
 }
