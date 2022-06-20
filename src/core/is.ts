@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:28:50
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2020-12-17 16:07:33
- * @Description:
- */
 /**
  * @ignore
  * 类型判断方法

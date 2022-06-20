@@ -1,12 +1,3 @@
-/*
- * @Author: 崔佳华
- * @Date: 2021-03-16 15:09:35
- * @LastEditors: zihao.chen
- * @LastEditTime: 2021-11-15 10:32:44
- * @Description:
- * @Props:
- * @Emit:
- */
 import { isArray } from './is'
 import { System } from '../enum/system'
 /**

@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:28:50
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-10-25 10:18:00
- * @Description:
- */
 import { _debounce, _throttle } from './lodash-tool'
 
 /**

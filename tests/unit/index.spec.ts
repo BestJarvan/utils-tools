@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:27:51
- * @LastEditors: zihao.chen
- * @LastEditTime: 2021-09-10 15:05:56
- * @Description:
- */
 import utils from '../../src/index'
 
 // 判断Utils是否挂载对应的方法

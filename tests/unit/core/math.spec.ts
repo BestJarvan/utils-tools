@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2021-03-18 10:05:08
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-09-14 15:55:25
- * @Description:
- */
 import utils from '../../../src/index'
 
 describe('Math test', () => {

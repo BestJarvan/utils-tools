@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:27:51
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2020-12-17 16:47:29
- * @Description:
- */
 import utils from '../../../src/index'
 
 describe('Verify test', () => {

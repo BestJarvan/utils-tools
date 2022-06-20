@@ -1,12 +1,3 @@
-/*
- * @Author: 陈祖康
- * @Date: 2021-03-16 15:54:39
- * @LastEditors: yuhang.xiao
- * @LastEditTime: 2021-05-25 16:55:55
- * @Description:
- * @Props:
- * @Emit:
- */
 import utils from '../../../src/index'
 
 describe('url test', () => {

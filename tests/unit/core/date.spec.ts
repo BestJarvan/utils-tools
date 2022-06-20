@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-05-08 09:59:17
- * @LastEditors: pengfei.li
- * @LastEditTime: 2021-09-02 11:34:57
- * @Description:
- */
 import utils from '../../../src/index'
 
 describe('Date test', () => {

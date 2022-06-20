@@ -1,13 +1,3 @@
-/*
- * @Author: 陈祖康
- * @Date: 2021-03-16 14:09:21
- * @LastEditors: yuhang.xiao
- * @LastEditTime: 2021-05-20 17:28:42
- * @Description: 针对url的一些方法
- * @Props:
- * @Emit:
- */
-
 /**
  *
  * @ignore

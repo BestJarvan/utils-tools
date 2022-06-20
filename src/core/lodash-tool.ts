@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2021-03-17 15:04:11
- * @LastEditors: weimin.wei
- * @LastEditTime: 2022-03-18 11:31:45
- * @Description: lodash工具方法 使用方法：utils._apiName()
- */
 import _get from 'lodash/get'
 import _map from 'lodash/map'
 import _uniq from 'lodash/uniq'

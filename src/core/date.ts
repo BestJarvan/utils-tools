@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:28:50
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-09-10 17:11:27
- * @Description:
- */
 import { formatAddZero } from './format'
 
 /**

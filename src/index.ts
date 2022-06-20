@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:28:50
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-08-19 17:18:07
- * @Description:
- */
 import * as index from './core/index'
 import * as verify from './core/verify'
 import * as format from './core/format'

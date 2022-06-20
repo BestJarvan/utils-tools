@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:27:51
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-10-25 10:32:56
- * @Description:
- */
 import utils from '../../../src/index'
 
 describe('Method test', () => {

@@ -1,10 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 10:08:11
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-08-19 16:03:00
- * @Description: 
- */
 const gulp = require('gulp')
 const del = require('del')
 const rollup = require('rollup')

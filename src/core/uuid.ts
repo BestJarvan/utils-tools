@@ -1,13 +1,3 @@
-/*
- * @Author: 陈祖康
- * @Date: 2021-03-19 13:35:58
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-07-01 16:47:22
- * @Description: 随机码
- * @Props:
- * @Emit:
- */
-
 /**
  * @ignore
  * @description 生成唯一码uuid

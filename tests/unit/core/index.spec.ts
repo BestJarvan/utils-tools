@@ -1,12 +1,3 @@
-/*
- * @Author: 崔佳华
- * @Date: 2021-03-17 16:41:38
- * @LastEditors: zihao.chen
- * @LastEditTime: 2021-11-15 10:31:48
- * @Description:
- * @Props:
- * @Emit:
- */
 import utils from '../../../src/index'
 
 Object.defineProperty(window, 'location', {

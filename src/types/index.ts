@@ -1,11 +1,3 @@
-/*
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:28:50
- * @LastEditors: weimin.wei
- * @LastEditTime: 2022-03-18 12:18:19
- * @Description:
- */
-
 interface Index {
   /**
    *

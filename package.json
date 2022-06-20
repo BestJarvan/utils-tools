@@ -8,7 +8,8 @@
     "test": "vue-cli-service test:unit",
     "dev-test": "npx jest --watchAll",
     "build": "npm run lint && gulp && typedoc",
-    "lint": "tslint --project tsconfig.json --fix"
+    "lint": "tslint --project tsconfig.json --fix",
+    "prepare": "husky install"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -20,7 +21,9 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.1",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@types/jest": "^25.2.3",
     "@types/lodash": "^4.14.172",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
@@ -57,11 +60,6 @@
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
     "vue-template-compiler": "^2.6.11"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "keywords": [
     "utils",
