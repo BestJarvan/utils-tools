@@ -1,7 +1,7 @@
 {
-  "name": "@xbb/xbb-utils",
+  "name": "@jarvan/jarvan-utils",
   "version": "1.5.0",
-  "description": "xbb内置工具包",
+  "description": "内置工具包",
   "author": "蒋亚辉 <j532547613@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
