@@ -5,7 +5,7 @@
 
 xbb工具包总合
 
-[doc文档](http://xbb_frontend.gitee.io/xbb-utils/)
+[doc文档](https://bestjarvan.github.io/utils-tools/)
 
 #### 使用说明
 
