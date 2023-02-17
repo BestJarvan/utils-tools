@@ -106,7 +106,7 @@ This toolkit integrates some methods of `lodash`, see[docs](https://bestjarvan.g
 
 ```
 ----------|------------------------
-版本号     |  备注
+Version     |  Remark
 ----------|------------------------
 v0.0.1    | init
 v0.1.0    | add vue2.6
