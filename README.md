@@ -3,7 +3,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/BestJarvan/utils-tools)
 [![npm](https://img.shields.io/bundlephobia/min/@jarvannnn/utils/0.0.11)](https://www.npmjs.com/package/@jarvannnn/utils)
 
-[doc文档](https://bestjarvan.github.io/utils-tools/)
+[docs](https://bestjarvan.github.io/utils-tools/)
 
 Welcome to Start、Fork。thx~   XD
 
