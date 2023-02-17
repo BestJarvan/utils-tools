@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@xbb/xbb-utils</title>
-	<meta name="description" content="Documentation for @xbb/xbb-utils">
+	<title>@jarvannnn/utils</title>
+	<meta name="description" content="Documentation for @jarvannnn/utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">@xbb/xbb-utils</a>
+					<a href="index.html" class="title">@jarvannnn/utils</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>@xbb/xbb-utils</h1>
+			<h1>@jarvannnn/utils</h1>
 		</div>
 	</div>
 </header>
@@ -68,127 +68,137 @@
 					<h1>utils</h1>
 				</a>
 				<p><a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-					<a href="https://gitee.com/bestjarvan/utils/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+					<a href="https://github.com/BestJarvan/utils-tools"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
 				<a href="https://www.npmjs.com/package/@jarvannnn/utils"><img src="https://img.shields.io/bundlephobia/min/@jarvannnn/utils/0.0.11" alt="npm"></a></p>
-				<p>xbb工具包总合</p>
-				<p><a href="http://xbb_frontend.gitee.io/xbb-utils/">doc文档</a></p>
+				<p><a href="https://bestjarvan.github.io/utils-tools/">doc文档</a></p>
 				<a href="#使用说明" id="使用说明" style="color: inherit; text-decoration: none;">
-					<h4>使用说明</h4>
+					<h5>使用说明</h5>
 				</a>
-				<pre><code><span class="hljs-regexp">//</span> 通过npm安装
-npm i --save xbb-utils</code></pre>
+				<pre><code><span class="hljs-regexp">//</span> 通过<span class="hljs-built_in">npm</span>安装
+<span class="hljs-built_in">npm</span> i --save @jarvannnn/utils</code></pre>
 				<a href="#调试说明" id="调试说明" style="color: inherit; text-decoration: none;">
 					<h4>调试说明</h4>
 				</a>
-				<pre><code><span class="hljs-built_in">npm</span> i
+				<pre><code>npm i
 
-<span class="hljs-built_in">npm</span> run serve</code></pre>
-				<a href="#文件目录" id="文件目录" style="color: inherit; text-decoration: none;">
-					<h4>文件目录</h4>
+<span class="hljs-comment">// 自动启动vue2方便调试、新增方法</span>
+npm <span class="hljs-keyword">run</span> serve
+
+<span class="hljs-comment">// 跑单测</span>
+npm <span class="hljs-keyword">run</span> <span class="hljs-keyword">test</span>
+
+<span class="hljs-comment">// 打包生成文档</span>
+npm <span class="hljs-keyword">run</span> build</code></pre><p><img src="https://fastly.jsdelivr.net/gh/BestJarvan/pic-imgs/imgs/202201171509895.png" alt="代码补全"></p>
+				<a href="#前言" id="前言" style="color: inherit; text-decoration: none;">
+					<h3>前言</h3>
+				</a>
+				<ol>
+					<li><p>项目中经常会用到某些方法，比如格式化时间戳，比如判断环境等等。
+						笔者最初是把这些方法抽离出来写成公共方法，但由于后期项目扩展每次都要复制这个工具文件很是麻烦且效率低下，发布npm包正好解决了这个痛点，正好借此机会重构成ts文件并发布npm包。  </p>
+					</li>
+					<li><p>本工具内置<code>vue2.x + ts</code>，方便开发中调试代码。
+						本工具包内部集成了<code>lodash</code>的一些方法，详见<a href="https://bestjarvan.github.io/utils-tools/docs/interfaces/lodashtool.html">文档</a>或者<code>src/core/lodash-tool</code>  </p>
+					</li>
+					<li><p>本工具使用<code>typedoc</code>根据注释自动生成文档，可搜索方法</p>
+					</li>
+					<li><p>本项目npm包单元测试通过率100%，同时经过公司多个项目沉淀，且稳定运行，大家如有需要可直接下载拓展使用</p>
+					</li>
+				</ol>
+				<p><a href="https://bestjarvan.gitee.io/2020/04/14/npm/Typescript+verdaccio/index.html">博客传送门</a></p>
+				<p>本文只简要介绍下整个流程，具体项目<a href="https://github.com/BestJarvan/utils-tools">GitHub</a>，欢迎Start、Fork。thx~   XD</p>
+				<a href="#插件" id="插件" style="color: inherit; text-decoration: none;">
+					<h3>插件</h3>
+				</a>
+				<blockquote>
+					<p>本工具包使用下列插件规范开发，定制团队开发规范</p>
+				</blockquote>
+				<ul>
+					<li>eslint</li>
+					<li>tslint</li>
+					<li>prettier</li>
+					<li>commitlint</li>
+					<li>husky</li>
+				</ul>
+				<a href="#目录结构" id="目录结构" style="color: inherit; text-decoration: none;">
+					<h3>目录结构</h3>
 				</a>
 				<pre><code>.
 ├── LICENSE
-├── README.md
-├── babel.config.js
-├── coverage <span class="hljs-regexp">//</span> 单测结果
-│   └── lcov-report
-│       └── src
-│           └── index.html <span class="hljs-regexp">//</span> 单测结果页面入口
-├── docs <span class="hljs-regexp">//</span> typedoc生成的文档
-│   ├── assets
-│   ├── globals.html
-│   ├── index.html
-│   └── interfaces
-├── gulpfile.js <span class="hljs-regexp">//</span> gulp+rollup配置文件
-├── package.json
-├── src <span class="hljs-regexp">//</span> 代码模块
-│   ├── core <span class="hljs-regexp">//</span> 核心代码块
-│   │   ├── env.ts
-│   │   └── **.ts
-│   ├── index.ts <span class="hljs-regexp">//</span> 入口文件
-│   ├── tools
-│   │   └── index.ts <span class="hljs-regexp">//</span> 工具
-│   └── types <span class="hljs-regexp">//</span> 声明文件
-│       └── index.ts <span class="hljs-regexp">//</span> interface
-├── tests <span class="hljs-regexp">//</span> 单元测试
-│   └── unit <span class="hljs-regexp">//</span> 核心测试模块
-├── home <span class="hljs-regexp">//</span> vue调试页面
-│   └── ** <span class="hljs-regexp">//</span> 调试
-├── vue.config.js <span class="hljs-regexp">//</span> vue项目配置(调试用)
-├── jest.config.js <span class="hljs-regexp">//</span> jest单测配置
-├── tsconfig.json <span class="hljs-regexp">//</span> ts配置
-├── tslint.json <span class="hljs-regexp">//</span> tslint配置
-├── .prettierrc <span class="hljs-regexp">//</span> prettier配置
-├── .lintstagedrc <span class="hljs-regexp">//</span> lintstage配置
-└── typedoc.json <span class="hljs-regexp">//</span> typedoc配置
-</code></pre>
+├── README<span class="hljs-selector-class">.md</span>
+├── docs <span class="hljs-comment">// typedoc生成的文档</span>
+│   ├── assets
+│   ├── globals<span class="hljs-selector-class">.html</span>
+│   ├── index<span class="hljs-selector-class">.html</span>
+│   └── interfaces
+├── gulpfile<span class="hljs-selector-class">.js</span> <span class="hljs-comment">// gulp+rollup配置文件</span>
+├── package<span class="hljs-selector-class">.json</span>
+├── public <span class="hljs-comment">// vue相关</span>
+├── home <span class="hljs-comment">// vue调试页面</span>
+├── <span class="hljs-attribute">src</span> // 代码模块
+│   ├── core <span class="hljs-comment">// 核心代码块</span>
+│   │   ├── env<span class="hljs-selector-class">.ts</span>
+│   │   └── ***<span class="hljs-selector-class">.ts</span>
+│   ├── index<span class="hljs-selector-class">.ts</span> <span class="hljs-comment">// 入口文件</span>
+│   ├── tools
+│   │   └── index<span class="hljs-selector-class">.ts</span>
+│   └── types <span class="hljs-comment">// 声明文件</span>
+│       └── index<span class="hljs-selector-class">.ts</span>
+├── test <span class="hljs-comment">// 单元测试</span>
+│   ├── core <span class="hljs-comment">// 核心代码单元测试</span>
+│   │   ├── env<span class="hljs-selector-class">.spec</span><span class="hljs-selector-class">.ts</span>
+│   │   └── ***<span class="hljs-selector-class">.spec</span><span class="hljs-selector-class">.ts</span>
+│   └── index<span class="hljs-selector-class">.spec</span><span class="hljs-selector-class">.ts</span>
+├── tsconfig<span class="hljs-selector-class">.json</span> <span class="hljs-comment">// ts配置</span>
+├── tslint<span class="hljs-selector-class">.json</span> <span class="hljs-comment">// tslint配置</span>
+├── <span class="hljs-selector-class">.prettierrc</span> <span class="hljs-comment">// prettier配置</span>
+├── <span class="hljs-selector-class">.lintstagedrc</span> <span class="hljs-comment">// lintstage配置</span>
+└── typedoc<span class="hljs-selector-class">.json</span> <span class="hljs-comment">// typedoc配置</span></code></pre>
 				<a href="#100测试通过率" id="100测试通过率" style="color: inherit; text-decoration: none;">
-					<h4>100%测试通过率</h4>
+					<h3>100%测试通过率</h3>
 				</a>
-				<pre><code>&gt; jest --coverage
-
- PASS  test/core/verify.spec.ts
- PASS  test/core/is.spec.ts
- PASS  test/core/env.spec.ts
- PASS  test/index.spec.ts
- PASS  test/core/format.spec.ts
- PASS  test/core/date.spec.ts
- PASS  test/core/method.spec.ts
-------------|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
-File        </span>|<span class="hljs-string"> % Stmts </span>|<span class="hljs-string"> % Branch </span>|<span class="hljs-string"> % Funcs </span>|<span class="hljs-string"> % Lines </span>|<span class="hljs-string"> Uncovered Line #s 
-------------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
-All files   </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
- src        </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-  index.ts  </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
- src/core   </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-  date.ts   </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-  env.ts    </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-  format.ts </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-  is.ts     </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-  method.ts </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-  verify.ts </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
- src/tools  </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-  index.ts  </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">      100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">     100 </span>|<span class="hljs-string">                   
-------------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">----------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">---------</span>|<span class="hljs-string">-------------------
-
-Test Suites: 7 passed, 7 total
-Tests:       57 passed, 57 total
-Snapshots:   0 total
-Time:        3.985s, estimated 4s
-Ran all test suites.</span></code></pre>
-				<a href="#版本说明" id="版本说明" style="color: inherit; text-decoration: none;">
-					<h4>版本说明</h4>
-				</a>
-				<pre><code>----------<span class="hljs-string">|------------------------</span>
-版本号     <span class="hljs-string">|  备注</span>
-----------<span class="hljs-string">|------------------------</span>
-v0.<span class="hljs-number">0.1</span>    <span class="hljs-string">| 基础搭建</span>
-v0.<span class="hljs-number">1.0</span>    <span class="hljs-string">| 新增vue2.x调试</span>
-v0.<span class="hljs-number">1.2</span>    <span class="hljs-string">| 修复bug，维护更新</span>
-v1.<span class="hljs-number">1.0</span>    <span class="hljs-string">| 优化math方法，新增thumbnail, formatToNumber, dealNumber, getGuid方法</span>
-v1.<span class="hljs-number">1.1</span>    <span class="hljs-string">| 开启命名空间</span>
-v1.<span class="hljs-number">1.2</span>    <span class="hljs-string">| 修复thumbnail方法判断，若传入空数组报错的bug</span>
-v1.<span class="hljs-number">1.3</span>    <span class="hljs-string">| 修复throttle、debounce，标识变量移动到函数内部，thumbnail方法支持更大图片格式</span>
-v1.<span class="hljs-number">1.5</span>    <span class="hljs-string">| 新增方法，正常迭代</span>
-v1.<span class="hljs-number">2.0</span>    <span class="hljs-string">| 新增isWxImg，envInfo，isThirdPC方法，兼容多平台和企微头像识别</span>
-v1.<span class="hljs-number">2.1</span>    <span class="hljs-string">| 修复toFixed方法遇见0.1浮点数计算精度出错问题</span>
-v1.<span class="hljs-number">2.3</span>    <span class="hljs-string">| 拓展thumbnail方法</span>
-v1.<span class="hljs-number">3.0</span>    <span class="hljs-string">| 植入lodash方法</span>
-v1.<span class="hljs-number">3.3</span>    <span class="hljs-string">| 拓展lodash方法</span>
-v1.<span class="hljs-number">3.4</span>    <span class="hljs-string">| 节流防抖，新增修饰符</span>
-v1.<span class="hljs-number">3.5</span>    <span class="hljs-string">| envInfo，isThirdPC优化展示方法，返回当前环境</span>
-v1.<span class="hljs-number">3.6</span>    <span class="hljs-string">| thumbnail: 支持API 导入进来的图片不渲染缩略图</span>
-v1.<span class="hljs-number">4.0</span>    <span class="hljs-string">| hexToRgba: 新增16进制转rgba方法</span>
-v1.<span class="hljs-number">4.1</span>    <span class="hljs-string">| thumbnail: 新增1080</span>
-----------<span class="hljs-string">|------------------------</span></code></pre>
-				<a href="#参与贡献" id="参与贡献" style="color: inherit; text-decoration: none;">
-					<h4>参与贡献</h4>
+				<p><img src="https://fastly.jsdelivr.net/gh/BestJarvan/pic-imgs/imgs/202201171509157.png" alt="测试结果"></p>
+				<a href="#文档输出" id="文档输出" style="color: inherit; text-decoration: none;">
+					<h3>文档输出</h3>
 				</a>
 				<ol>
-					<li>新建 feature/xxx 分支</li>
-					<li>提交代码</li>
-					<li>新建 Merge Request</li>
+					<li>配置typedoc<pre><code><span class="hljs-regexp">//</span> package.json  scripts片段
+{
+<span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;npm run lint &amp;&amp; gulp &amp;&amp; typedoc&quot;</span>,
+}
+<span class="hljs-regexp">//</span> typedoc 自动识别根目录下typedoc.json配置文件
+</code></pre></li>
 				</ol>
+				<pre><code>
+#### 版本说明
+</code></pre><p>----------|------------------------
+					版本号     |  备注
+					----------|------------------------
+					v0.0.1    | 基础搭建
+					v0.1.0    | 新增vue2.x调试
+					v0.1.2    | 修复bug，维护更新
+					v1.1.0    | 优化math方法，新增thumbnail, formatToNumber, dealNumber, getGuid方法
+					v1.1.1    | 开启命名空间
+					v1.1.2    | 修复thumbnail方法判断，若传入空数组报错的bug
+					v1.1.3    | 修复throttle、debounce，标识变量移动到函数内部，thumbnail方法支持更大图片格式
+					v1.1.5    | 新增方法，正常迭代
+					v1.2.0    | 新增isWxImg，envInfo，isThirdPC方法，兼容多平台和企微头像识别
+					v1.2.1    | 修复toFixed方法遇见0.1浮点数计算精度出错问题
+					v1.2.3    | 拓展thumbnail方法
+					v1.3.0    | 植入lodash方法
+					v1.3.3    | 拓展lodash方法
+					v1.3.4    | 节流防抖，新增修饰符
+					v1.3.5    | envInfo，isThirdPC优化展示方法，返回当前环境
+					v1.3.6    | thumbnail: 支持API 导入进来的图片不渲染缩略图
+					v1.4.0    | hexToRgba: 新增16进制转rgba方法
+					v1.4.1    | thumbnail: 新增1080
+					v1.5.0    | lodash: 新增_padStart, _padEnd
+				----------|------------------------</p>
+				<pre><code>
+#### 参与贡献
+
+<span class="hljs-number">1.</span>  新建 feature/xxx 分支
+<span class="hljs-number">2.</span>  提交代码
+<span class="hljs-number">3.</span>  新建 Merge Request</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

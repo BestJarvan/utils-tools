@@ -15,7 +15,7 @@ module.exports = {
 			entry: resolve('home/main.ts'),
 			template: 'public/index.html',
 			filename: 'index.html',
-			title: 'Xbb Utils Dev Tools',
+			title: 'Utils Tools',
 			chunks: ['chunk-vendors', 'chunk-common', 'index']
 		},
 	},

@@ -1,10 +1,3 @@
-<!--
- * @Author: Yahui.Jiang
- * @Date: 2020-12-17 15:09:27
- * @LastEditors: Yahui.Jiang
- * @LastEditTime: 2021-08-19 17:17:35
- * @Description: 
--->
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">

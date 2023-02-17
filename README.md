@@ -1,99 +1,105 @@
 # utils
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://gitee.com/bestjarvan/utils/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/BestJarvan/utils-tools)
 [![npm](https://img.shields.io/bundlephobia/min/@jarvannnn/utils/0.0.11)](https://www.npmjs.com/package/@jarvannnn/utils)
-
-xbb工具包总合
 
 [doc文档](https://bestjarvan.github.io/utils-tools/)
 
-#### 使用说明
+##### 使用说明
 
 ```
 // 通过npm安装
-npm i --save xbb-utils
+npm i --save @jarvannnn/utils
 ```
 
 #### 调试说明
 ```
 npm i
 
+// 自动启动vue2方便调试、新增方法
 npm run serve
+
+// 跑单测
+npm run test
+
+// 打包生成文档
+npm run build
 ```
 
-#### 文件目录
+![代码补全](https://fastly.jsdelivr.net/gh/BestJarvan/pic-imgs/imgs/202201171509895.png)
+
+### 前言
+1. 项目中经常会用到某些方法，比如格式化时间戳，比如判断环境等等。  
+笔者最初是把这些方法抽离出来写成公共方法，但由于后期项目扩展每次都要复制这个工具文件很是麻烦且效率低下，发布npm包正好解决了这个痛点，正好借此机会重构成ts文件并发布npm包。  
+
+2. 本工具内置`vue2.x + ts`，方便开发中调试代码。  
+本工具包内部集成了`lodash`的一些方法，详见[文档](https://bestjarvan.github.io/utils-tools/docs/interfaces/lodashtool.html)或者`src/core/lodash-tool`  
+
+3. 本工具使用`typedoc`根据注释自动生成文档，可搜索方法
+
+4. 本项目npm包单元测试通过率100%，同时经过公司多个项目沉淀，且稳定运行，大家如有需要可直接下载拓展使用
+
+[博客传送门](https://bestjarvan.gitee.io/2020/04/14/npm/Typescript+verdaccio/index.html)
+
+本文只简要介绍下整个流程，具体项目[GitHub](https://github.com/BestJarvan/utils-tools)，欢迎Start、Fork。thx~   XD
+
+
+### 插件
+> 本工具包使用下列插件规范开发，定制团队开发规范
+- eslint
+- tslint
+- prettier
+- commitlint
+- husky
+
+### 目录结构
 ```
 .
 ├── LICENSE
 ├── README.md
-├── babel.config.js
-├── coverage // 单测结果
-│   └── lcov-report
-│       └── src
-│           └── index.html // 单测结果页面入口
 ├── docs // typedoc生成的文档
-│   ├── assets
-│   ├── globals.html
-│   ├── index.html
-│   └── interfaces
+│   ├── assets
+│   ├── globals.html
+│   ├── index.html
+│   └── interfaces
 ├── gulpfile.js // gulp+rollup配置文件
 ├── package.json
-├── src // 代码模块
-│   ├── core // 核心代码块
-│   │   ├── env.ts
-│   │   └── **.ts
-│   ├── index.ts // 入口文件
-│   ├── tools
-│   │   └── index.ts // 工具
-│   └── types // 声明文件
-│       └── index.ts // interface
-├── tests // 单元测试
-│   └── unit // 核心测试模块
+├── public // vue相关
 ├── home // vue调试页面
-│   └── ** // 调试
-├── vue.config.js // vue项目配置(调试用)
-├── jest.config.js // jest单测配置
+├── src // 代码模块
+│   ├── core // 核心代码块
+│   │   ├── env.ts
+│   │   └── ***.ts
+│   ├── index.ts // 入口文件
+│   ├── tools
+│   │   └── index.ts
+│   └── types // 声明文件
+│       └── index.ts
+├── test // 单元测试
+│   ├── core // 核心代码单元测试
+│   │   ├── env.spec.ts
+│   │   └── ***.spec.ts
+│   └── index.spec.ts
 ├── tsconfig.json // ts配置
 ├── tslint.json // tslint配置
 ├── .prettierrc // prettier配置
 ├── .lintstagedrc // lintstage配置
 └── typedoc.json // typedoc配置
-
 ```
 
-#### 100%测试通过率
+### 100%测试通过率
+
+![测试结果](https://fastly.jsdelivr.net/gh/BestJarvan/pic-imgs/imgs/202201171509157.png)
+
+### 文档输出
+1. 配置typedoc
 ```
-> jest --coverage
+// package.json  scripts片段
+{
+  "build": "npm run lint && gulp && typedoc",
+}
+// typedoc 自动识别根目录下typedoc.json配置文件
 
- PASS  test/core/verify.spec.ts
- PASS  test/core/is.spec.ts
- PASS  test/core/env.spec.ts
- PASS  test/index.spec.ts
- PASS  test/core/format.spec.ts
- PASS  test/core/date.spec.ts
- PASS  test/core/method.spec.ts
-------------|---------|----------|---------|---------|-------------------
-File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------|---------|----------|---------|---------|-------------------
-All files   |     100 |      100 |     100 |     100 |                   
- src        |     100 |      100 |     100 |     100 |                   
-  index.ts  |     100 |      100 |     100 |     100 |                   
- src/core   |     100 |      100 |     100 |     100 |                   
-  date.ts   |     100 |      100 |     100 |     100 |                   
-  env.ts    |     100 |      100 |     100 |     100 |                   
-  format.ts |     100 |      100 |     100 |     100 |                   
-  is.ts     |     100 |      100 |     100 |     100 |                   
-  method.ts |     100 |      100 |     100 |     100 |                   
-  verify.ts |     100 |      100 |     100 |     100 |                   
- src/tools  |     100 |      100 |     100 |     100 |                   
-  index.ts  |     100 |      100 |     100 |     100 |                   
-------------|---------|----------|---------|---------|-------------------
-
-Test Suites: 7 passed, 7 total
-Tests:       57 passed, 57 total
-Snapshots:   0 total
-Time:        3.985s, estimated 4s
-Ran all test suites.
 ```
 
 #### 版本说明
