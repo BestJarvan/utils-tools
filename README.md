@@ -9,6 +9,8 @@ Welcome to Start、Fork。thx~   XD
 
 English|[中文简体](./README-ZH.md)
 
+Although there are a large number of third-party class libraries in the project, each company will have its own customized toolkits, which can be transformed into npm packages and installed in the project in this way.
+
 ##### Instructions for use
 
 ```
